@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using FightingScene.CoinSystem;
+using Frame.Core;
 using UnityEngine;
 
 namespace EcustGamejam
