@@ -2,17 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinManager : MonoBehaviour
+namespace EcustGamejam
 {
-    // Start is called before the first frame update
-    void Start()
+    public class CoinManager : SingletonBase<CoinManager>
     {
-        
+        [SerializeField]
+        public List<GameObject> coinList = new List<GameObject>();
+
+        void Start()
+        {
+            //RollChosenCoins();
+        }
+
+
+        void Update()
+        {
+
+        }
+
+        public void RollChosenCoins()
+        {
+            foreach (GameObject obj in coinList)
+            {
+                Coin coin = obj.GetComponent<Coin>();
+
+                if (coin.isChosen)
+                {
+                    coin.DoRandom();
+                    coin.isChosen = false;
+                }
+            }
+        }
+
+        private void DoCoinEffect()
+        {
+
+        }
+
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
