@@ -1,49 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class SingletonBase<T> : MonoBehaviour where T : MonoBehaviour
+namespace Frame.Core
 {
-    private static T m_instance;
-    private static object m_instanceLock = new object();
-
-    public static T Instance
+    public class SingletonBase<T> : MonoBehaviour where T : MonoBehaviour
     {
-        get
+        private static T m_instance;
+        private static object m_instanceLock = new object();
+
+        public static T Instance
         {
-            lock (m_instanceLock)
+            get
             {
-
-                if (m_instance == null)
+                lock (m_instanceLock)
                 {
-                    //单例是否已经存在于场景
-                    m_instance = FindObjectOfType<T>();
 
-                    if (FindObjectsOfType<T>().Length > 1)
-                    {
-                        return m_instance;
-                    }
-
-                    //不存在则创建一个
                     if (m_instance == null)
                     {
-                        GameObject singleton = new GameObject();
-                        m_instance = singleton.AddComponent<T>();
-                        singleton.name = "singleton " + typeof(T).ToString();
+                        //单例是否已经存在于场景
+                        m_instance = FindObjectOfType<T>();
 
-                        DontDestroyOnLoad(singleton);
+                        if (FindObjectsOfType<T>().Length > 1)
+                        {
+                            return m_instance;
+                        }
+
+                        //不存在则创建一个
+                        if (m_instance == null)
+                        {
+                            GameObject singleton = new GameObject();
+                            m_instance = singleton.AddComponent<T>();
+                            singleton.name = "singleton " + typeof(T).ToString();
+
+                            DontDestroyOnLoad(singleton);
+                        }
                     }
+
+                    return m_instance;
                 }
 
-                return m_instance;
             }
-
         }
-    }
 
-    protected virtual void OnDestroy()
-    {
-        m_instance = null;
+        protected virtual void OnDestroy()
+        {
+            m_instance = null;
+        }
     }
 }
