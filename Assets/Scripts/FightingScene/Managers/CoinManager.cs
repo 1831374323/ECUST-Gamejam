@@ -24,10 +24,9 @@ namespace FightingScene.Managers
         /// </summary>
         private void Start()
         {
-            //Coin tmpCoin = Instantiate(...);
-            //coinList.Add(tmpCoin);
-            //一开始UI不出现
+            //一开始硬币回合UI不出现
             coinUI.SetActive(false);
+            //战斗中硬币状态栏出现
             coinFightUI.SetActive(true);
         }
         
