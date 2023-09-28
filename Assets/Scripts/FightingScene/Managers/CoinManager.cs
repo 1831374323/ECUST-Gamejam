@@ -10,9 +10,14 @@ namespace FightingScene.Managers
     {
         [SerializeField,Tooltip("玩家所选择钱币")]
         public List<GameObject> coinList = new List<GameObject>();
+        
+        [Tooltip("战斗界面的钱币UI文本")] public List<Text> coinTextList = new List<Text>();
+        [SerializeField, Tooltip("战斗界面硬币UI")] private GameObject coinFightUI;
 
         [SerializeField, Tooltip("投掷硬币UI")] private GameObject coinUI;
         [Tooltip("投掷钱币按钮")] public Button rollButton;
+        
+        
         
         /// <summary>
         /// 生成六个硬币？
@@ -23,6 +28,7 @@ namespace FightingScene.Managers
             //coinList.Add(tmpCoin);
             //一开始UI不出现
             coinUI.SetActive(false);
+            coinFightUI.SetActive(true);
         }
         
         /// <summary>
@@ -38,6 +44,19 @@ namespace FightingScene.Managers
                     coin.DoRandom();
                     coin.coinText.text = (coin.statu == true) ? "正" : "反";
                 }
+            }
+        }
+        
+        /// <summary>
+        /// 同步战斗界面的钱币UI
+        /// </summary>
+        private void SetFightCoinUI()
+        {
+            List<Coin> coins = GetCoinsResult();
+            
+            for (int i = 0; i < coinList.Count; i++)
+            {
+                coinTextList[i].text = coins[i].coinText.text;
             }
         }
 
@@ -65,12 +84,23 @@ namespace FightingScene.Managers
         }
         
         /// <summary>
-        /// 开始或者结束硬币回合
+        /// 开始硬币回合
         /// </summary>
-        public void OnCoinTurnStartEnd()
+        public void OnCoinTurnStart()
         {
-            coinUI.SetActive(!coinUI.activeSelf);
+            coinUI.SetActive(true);
             rollButton.GetComponent<Button>().interactable = true;
+            coinFightUI.SetActive(false);
+        }
+        
+        /// <summary>
+        /// 结束硬币回合
+        /// </summary>
+        public void OnCoinTurnEnd()
+        {
+            coinUI.SetActive(false);
+            coinFightUI.SetActive(true);
+            SetFightCoinUI();
         }
         
         /// <summary>
