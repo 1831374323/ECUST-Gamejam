@@ -10,7 +10,7 @@ namespace FightingScene.CoinSystem
         [Tooltip("硬币的正反，ture为正")] public bool statu = true;
         [Tooltip("硬币是否被选择")] public bool isChosen = true;
         [Tooltip("硬币文本")] public Text coinText;
-        
+
         /// <summary>
         /// 投掷硬币，返回0为反，返回1为正
         /// </summary>
@@ -20,11 +20,13 @@ namespace FightingScene.CoinSystem
             statu = (result != 0); 
         }
         /// <summary>
-        /// 选择或者不选钱币
+        /// 选择或者不选钱币，不选择图片就会暗淡
         /// </summary>
         public void RevertThisCoin()
         {
             this.isChosen = !this.isChosen;
+            float lighta = !this.isChosen ? 0.5f : 1f;
+            this.GetComponent<Image>().color = new Color(gameObject.GetComponent<Image>().color.r, gameObject.GetComponent<Image>().color.g, gameObject.GetComponent<Image>().color.b, lighta);
         }
     }
 }
