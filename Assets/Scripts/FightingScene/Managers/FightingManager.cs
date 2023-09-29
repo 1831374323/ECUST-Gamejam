@@ -15,7 +15,8 @@ namespace EcustGamejam
         private bool isRoundOver = false;
         void Start()
         {
-            CoinManager.Instance.OnCoinTurnEndAction += CoinRoundOver;
+            CoinManager.Instance.onCoinTurnEndAction += CoinRoundOver;
+            CoinManager.Instance.onCoinTurnStartAction += () => { Debug.Log("çŸ¥é“ç¡¬å¸å›åˆå¼€å§‹å•¦");};
             StartCoroutine(RoundControllor());
         }
 
@@ -68,9 +69,9 @@ namespace EcustGamejam
 
         private void CoinRoundOver()
         {
-            Debug.Log("ÎÒÖªµÀÁËÏÖÔÚÓ²±Ò»ØºÏ½áÊø");
-            //¸Ä±äÊôĞÔ
-            //ÅĞ¶ÏËÙ¶È
+            Debug.Log("æˆ‘çŸ¥é“äº†ç°åœ¨ç¡¬å¸å›åˆç»“æŸ");
+            //æ”¹å˜å±æ€§
+            //åˆ¤æ–­é€Ÿåº¦
             //if ()
             {
                 nextStates.Add(RoundState.PlayerRound);

@@ -18,14 +18,20 @@ namespace FightingScene.Managers
         [SerializeField, Tooltip("投掷硬币UI")] private GameObject coinUI;
         [Tooltip("投掷钱币按钮")] public Button rollButton;
 
-        public Action OnCoinTurnEndAction;
+        [Tooltip("硬币回合")]public Action onCoinTurnEndAction;
+        public Action onCoinTurnStartAction;
 
+        /// <summary>
+        /// Awake里存放并设置委托事件
+        /// </summary>
         private void Awake()
         {
-            OnCoinTurnEndAction += CoinTurnEnd;
+            onCoinTurnEndAction += CoinTurnEnd;
+            onCoinTurnStartAction += CoinTurnStart;
         }
+        
         /// <summary>
-        /// 生成六个硬币？
+        /// 
         /// </summary>
         private void Start()
         {
@@ -33,7 +39,6 @@ namespace FightingScene.Managers
             coinUI.SetActive(false);
             //战斗中硬币状态栏出现
             coinFightUI.SetActive(true);
-
         }
 
         /// <summary>
@@ -58,7 +63,6 @@ namespace FightingScene.Managers
         private void SetFightCoinUI()
         {
             List<Coin> coins = GetCoinsResult();
-
             for (int i = 0; i < coinList.Count; i++)
             {
                 coinTextList[i].text = coins[i].coinText.text;
@@ -87,34 +91,7 @@ namespace FightingScene.Managers
         {
 
         }
-
-        /// <summary>
-        /// 开始硬币回合
-        /// </summary>
-        public void OnCoinTurnStart()
-        {
-            coinUI.SetActive(true);
-            rollButton.GetComponent<Button>().interactable = true;
-            coinFightUI.SetActive(false);
-        }
-
-        public void OnCoinTurnEnd()
-        {
-            OnCoinTurnEndAction.Invoke();
-        }
-
-        /// <summary>
-        /// 结束硬币回合
-        /// </summary>
-        private void CoinTurnEnd()
-        {
-
-            coinUI.SetActive(false);
-            coinFightUI.SetActive(true);
-            SetFightCoinUI();
-
-
-        }
+        
 
         /// <summary>
         /// 禁止使用投掷按钮
@@ -124,7 +101,36 @@ namespace FightingScene.Managers
             rollButton.GetComponent<Button>().interactable = false;
         }
 
+        /// <summary>
+        /// 开始硬币回合
+        /// </summary>
+        private void CoinTurnStart()
+        {
+            coinUI.SetActive(true);
+            rollButton.GetComponent<Button>().interactable = true;
+            coinFightUI.SetActive(false);
+        }
 
+        /// <summary>
+        /// 结束硬币回合
+        /// </summary>
+        private void CoinTurnEnd()
+        {
+            coinUI.SetActive(false);
+            coinFightUI.SetActive(true);
+            SetFightCoinUI();
+        }
+        
+        public void OnCoinTurnEnd()
+        {
+            onCoinTurnEndAction.Invoke();
+        }
+        
+        public void OnCoinTurnStart()
+        {
+            onCoinTurnStartAction.Invoke();
+        }
+        
     }
 
 }
