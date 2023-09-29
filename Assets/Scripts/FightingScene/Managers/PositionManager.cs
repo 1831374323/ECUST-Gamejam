@@ -10,10 +10,11 @@ namespace EcustGamejam
     public class PositionManager : SingletonBase<PositionManager>
     {
         List<Coin> coinResult = new List<Coin>();
+        int currentPositionID = 0;
 
         void Start()
         {
-            
+
 
         }
 
@@ -23,9 +24,26 @@ namespace EcustGamejam
 
         }
 
-        public void GetPositionResult()
+        public int GetPositionResultID()
         {
+
             coinResult = CoinManager.Instance.GetCoinsResult();
+            foreach (Coin coin in coinResult)
+            {
+                if (coin.statu && coin.isChosen)
+                {
+                    if (currentPositionID < 8)
+                    {
+                        currentPositionID++;
+                    }
+                    else
+                    {
+                        currentPositionID = 0;
+                    }
+                }
+            }
+
+            return currentPositionID;
         }
     }
 }

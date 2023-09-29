@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Position
+[CreateAssetMenu(fileName ="Position", menuName = "MyData/Position")]
+public class Position : ScriptableObject
 {
-    int id;
-    string name;
+    public int id;
+    public string m_name;
+    public string color;
 }
