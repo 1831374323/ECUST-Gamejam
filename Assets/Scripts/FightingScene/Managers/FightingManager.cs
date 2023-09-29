@@ -34,6 +34,7 @@ namespace EcustGamejam
             OnPlayerRoundStartAction += PlayerRoundStart;
             OnPlayerRoundEndAction += PlayerRoundEnd;
 
+            OnEnemyRoundStartAction = null;
             OnEnemyRoundEndAction += EnemyRoundEnd;
 
             StartCoroutine(RoundControllor());
@@ -95,7 +96,7 @@ namespace EcustGamejam
             }
         }
         #region -------------CoinRound-------------
-        
+
         private void CoinRoundOver()
         {
             //Debug.Log("我知道了现在硬币回合结束");
@@ -124,7 +125,7 @@ namespace EcustGamejam
         #region -------------PlayerRound-------------
         public void OnPlayerRoundStart()
         {
-            OnPlayerRoundStartAction.Invoke();
+            OnPlayerRoundStartAction?.Invoke();
         }
 
         private void PlayerRoundStart()
@@ -137,7 +138,7 @@ namespace EcustGamejam
 
         public void OnPlayerRoundEnd()
         {
-            OnPlayerRoundEndAction.Invoke();
+            OnPlayerRoundEndAction?.Invoke();
         }
 
         private void PlayerRoundEnd()
@@ -151,12 +152,12 @@ namespace EcustGamejam
 
         public void OnEnemyRoundStart()
         {
-            OnEnemyRoundStartAction.Invoke();
+            OnEnemyRoundStartAction?.Invoke();
         }
 
         public void OnEnemyRoundEnd()
         {
-            OnEnemyRoundEndAction.Invoke();
+            OnEnemyRoundEndAction?.Invoke();
         }
 
 
