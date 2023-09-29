@@ -11,11 +11,11 @@ namespace FightingScene.UnitSystem
         
         [Tooltip("人物当前蓝量")] public int maxMp;
         [Tooltip("人物当前蓝量")] public int currentMp;
-        
-        [Tooltip("人物速度值")] public int speed{ get; set; }
 
-        [Tooltip("人物暴击率")] public float criticalHitRate { get; set; }
-        [Tooltip("人物暴击倍率")] public float criticalStrikeRate { get; set; }
+        [Tooltip("人物速度值")] public int speed;
+
+        [Tooltip("人物暴击率")] public float criticalHitRate;
+        [Tooltip("人物暴击倍率")] public float criticalStrikeRate;
 
         /// <summary>
         /// 设置血量函数

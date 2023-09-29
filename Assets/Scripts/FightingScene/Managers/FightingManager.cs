@@ -4,19 +4,38 @@ using UnityEngine;
 using Frame.Core;
 using System;
 using FightingScene.Managers;
+using FightingScene.UnitSystem;
 
 namespace EcustGamejam
 {
     public class FightingManager : SingletonBase<FightingManager>
     {
+
         [SerializeField]
         private RoundState roundState = RoundState.CoinRound;
+        [SerializeField]
         private List<RoundState> nextStates = new List<RoundState>();
+        public bool isFirstRound = true;
         private bool isRoundOver = false;
+
+        public UnitMono player;
+        public UnitMono enemy;
+
+        Action OnPlayerRoundStartAction;
+        Action OnPlayerRoundEndAction;
+
+        Action OnEnemyRoundStartAction;
+        Action OnEnemyRoundEndAction;
+
         void Start()
         {
             CoinManager.Instance.onCoinTurnEndAction += CoinRoundOver;
-            CoinManager.Instance.onCoinTurnStartAction += () => { Debug.Log("知道硬币回合开始啦");};
+
+            OnPlayerRoundStartAction += PlayerRoundStart;
+            OnPlayerRoundEndAction += PlayerRoundEnd;
+
+            OnEnemyRoundEndAction += EnemyRoundEnd;
+
             StartCoroutine(RoundControllor());
         }
 
@@ -38,9 +57,11 @@ namespace EcustGamejam
         {
             while (this != null)
             {
+                //初始化
                 nextStates.Clear();
                 nextStates.Add(RoundState.CoinRound);
 
+                //进行回合阶段
                 while (nextStates.Count > 0)
                 {
                     roundState = nextStates[0];
@@ -51,10 +72,13 @@ namespace EcustGamejam
                             CoinManager.Instance.OnCoinTurnStart();
                             break;
                         case RoundState.PlayerRound:
+                            OnPlayerRoundStart();
                             break;
                         case RoundState.EnemyRound:
+                            OnEnemyRoundStart();
                             break;
                         case RoundState.PlayerRound2:
+                            OnPlayerRoundStart();
                             break;
                         default:
                             break;
@@ -63,34 +87,85 @@ namespace EcustGamejam
                     isRoundOver = false;
                 }
 
+                if (isFirstRound)
+                {
+                    isFirstRound = false;
+                }
 
             }
         }
-
+        #region -------------CoinRound-------------
+        
         private void CoinRoundOver()
         {
-            Debug.Log("我知道了现在硬币回合结束");
+            //Debug.Log("我知道了现在硬币回合结束");
             //改变属性
-            //判断速度
-            //if ()
+            //判断速度,根据速度确定回合顺序
+            if (player.speed >= enemy.speed * 2)
             {
                 nextStates.Add(RoundState.PlayerRound);
                 nextStates.Add(RoundState.EnemyRound);
                 nextStates.Add(RoundState.PlayerRound2);
             }
-            //else if ()
+            else if (player.speed < enemy.speed * 2 && player.speed >= enemy.speed)
             {
                 nextStates.Add(RoundState.PlayerRound);
                 nextStates.Add(RoundState.EnemyRound);
             }
-            //else
+            else
             {
                 nextStates.Add(RoundState.EnemyRound);
                 nextStates.Add(RoundState.PlayerRound);
             }
             isRoundOver = true;
         }
+        #endregion
 
-        public Action OnCoinTurnStart;
+        #region -------------PlayerRound-------------
+        public void OnPlayerRoundStart()
+        {
+            OnPlayerRoundStartAction.Invoke();
+        }
+
+        private void PlayerRoundStart()
+        {
+            if (roundState == RoundState.PlayerRound2)
+            {
+                player.SetMp(0);
+            }
+        }
+
+        public void OnPlayerRoundEnd()
+        {
+            OnPlayerRoundEndAction.Invoke();
+        }
+
+        private void PlayerRoundEnd()
+        {
+            isRoundOver = true;
+        }
+
+        #endregion
+
+        #region -------------EnemyRound-------------
+
+        public void OnEnemyRoundStart()
+        {
+            OnEnemyRoundStartAction.Invoke();
+        }
+
+        public void OnEnemyRoundEnd()
+        {
+            OnEnemyRoundEndAction.Invoke();
+        }
+
+
+        private void EnemyRoundEnd()
+        {
+            isRoundOver = true;
+        }
+
+        #endregion
+
     }
 }
