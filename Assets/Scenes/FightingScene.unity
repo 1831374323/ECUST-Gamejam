@@ -2647,7 +2647,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 133276427}
         m_TargetAssemblyTypeName: FightingScene.Managers.CoinManager, Assembly-CSharp
-        m_MethodName: OnCoinTurnEnd
+        m_MethodName: OnCoinTurnEndClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -15,6 +15,7 @@ namespace EcustGamejam
         private bool isRoundOver = false;
         void Start()
         {
+            CoinManager.Instance.OnCoinTurnEndAction += CoinRoundOver;
             StartCoroutine(RoundControllor());
         }
 
@@ -67,6 +68,7 @@ namespace EcustGamejam
 
         private void CoinRoundOver()
         {
+            Debug.Log("我知道了现在硬币回合结束");
             //改变属性
             //判断速度
             //if ()
@@ -87,5 +89,7 @@ namespace EcustGamejam
             }
             isRoundOver = true;
         }
+
+        public Action OnCoinTurnStart;
     }
 }
