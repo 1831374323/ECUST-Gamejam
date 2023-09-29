@@ -11,6 +11,7 @@ namespace FightingScene.UnitSystem
         
         [Tooltip("人物当前蓝量")] public int maxMp;
         [Tooltip("人物当前蓝量")] public int currentMp;
+        [Tooltip("人物蓝量恢复值")] public int cureMp;
 
         [Tooltip("人物速度值")] public int speed;
 

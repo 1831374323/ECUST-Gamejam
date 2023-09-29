@@ -699,6 +699,8 @@ MonoBehaviour:
   coinFightUI: {fileID: 1226741309}
   coinUI: {fileID: 419759318}
   rollButton: {fileID: 859374173}
+  player: {fileID: 542887751}
+  enemy: {fileID: 1506566576}
 --- !u!4 &133276428
 Transform:
   m_ObjectHideFlags: 0
@@ -728,6 +730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roundState: 0
   nextStates: 
+  isFirstRound: 1
   player: {fileID: 542887751}
   enemy: {fileID: 1506566576}
 --- !u!1 &179166557
@@ -1662,8 +1665,9 @@ MonoBehaviour:
   unitName: Player
   maxHp: 0
   currentHp: 0
-  maxMp: 0
+  maxMp: 100
   currentMp: 0
+  cureMp: 15
   speed: 10
   criticalHitRate: 0
   criticalStrikeRate: 0
@@ -3040,6 +3044,7 @@ MonoBehaviour:
   currentHp: 0
   maxMp: 0
   currentMp: 0
+  cureMp: 0
   speed: 4
   criticalHitRate: 0
   criticalStrikeRate: 0

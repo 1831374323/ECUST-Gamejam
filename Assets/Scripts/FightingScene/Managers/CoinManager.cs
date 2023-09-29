@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using EcustGamejam;
 using FightingScene.CoinSystem;
 using Frame.Core;
 using UnityEngine;
 using UnityEngine.UI;
+using FightingScene.UnitSystem;
 
 namespace FightingScene.Managers
 {
@@ -20,7 +22,10 @@ namespace FightingScene.Managers
 
         [Tooltip("硬币回合")]public Action onCoinTurnEndAction;
         public Action onCoinTurnStartAction;
-
+        
+        [Tooltip("玩家")] public UnitMono player;
+        [Tooltip("敌人")] public UnitMono enemy;
+        
         /// <summary>
         /// Awake里存放并设置委托事件
         /// </summary>
@@ -46,6 +51,12 @@ namespace FightingScene.Managers
         /// </summary>
         public void RollChosenCoins()
         {
+            if (!FightingManager.Instance.isFirstRound)
+            {
+                bool isSuccess = player.SetMp(1);
+                Debug.Log(isSuccess);
+            }
+
             foreach (GameObject obj in coinList)
             {
                 Coin coin = obj.GetComponent<Coin>();
@@ -109,6 +120,9 @@ namespace FightingScene.Managers
             coinUI.SetActive(true);
             rollButton.GetComponent<Button>().interactable = true;
             coinFightUI.SetActive(false);
+            
+            bool isSuccess = player.SetMp(player.cureMp);
+            Debug.Log(isSuccess);
         }
 
         /// <summary>
