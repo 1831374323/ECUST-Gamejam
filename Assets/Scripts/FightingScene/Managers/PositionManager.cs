@@ -1,18 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Frame.Core;
+using FightingScene.Managers;
+using FightingScene.CoinSystem;
 
-public class PositionManager : MonoBehaviour
+namespace EcustGamejam
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PositionManager : SingletonBase<PositionManager>
     {
-        
-    }
+        List<Coin> coinResult = new List<Coin>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        void Start()
+        {
+            
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        public void GetPositionResult()
+        {
+            coinResult = CoinManager.Instance.GetCoinsResult();
+        }
     }
 }
