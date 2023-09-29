@@ -23,6 +23,8 @@ namespace FightingScene.Managers
         [Tooltip("硬币回合")]public Action onCoinTurnEndAction;
         public Action onCoinTurnStartAction;
         
+        [Tooltip("投掷扣除的蓝量")] public int tempMp;
+        
         [Tooltip("玩家")] public UnitMono player;
         [Tooltip("敌人")] public UnitMono enemy;
         
@@ -47,13 +49,13 @@ namespace FightingScene.Managers
         }
 
         /// <summary>
-        /// 遍历硬币列表，直接调用硬币自带的随机函数
+        /// 遍历硬币列表，直接调用硬币自带的随机函数，仅在第一回合不扣蓝
         /// </summary>
         public void RollChosenCoins()
         {
             if (!FightingManager.Instance.isFirstRound)
             {
-                bool isSuccess = player.SetMp(1);
+                bool isSuccess = player.SetMp(-tempMp);
                 Debug.Log(isSuccess);
             }
 
@@ -122,7 +124,6 @@ namespace FightingScene.Managers
             coinFightUI.SetActive(false);
             
             bool isSuccess = player.SetMp(player.cureMp);
-            Debug.Log(isSuccess);
         }
 
         /// <summary>
