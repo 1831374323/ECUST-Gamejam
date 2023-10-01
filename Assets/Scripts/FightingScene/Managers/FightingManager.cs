@@ -108,10 +108,13 @@ namespace EcustGamejam
                 //注销符咒效果
                 for (int i = 0; i < 3; i++)
                 {
-                    if (m_spells[i].isApplyed)
+                    if (m_spells.Count > i )
                     {
-                        //SpellManager.instance......
-                        m_spells[i].isApplyed = false;
+                        if (m_spells[i].isApplyed)
+                        {
+                            SpellManager.Instance.SpellDisable(m_spells[i].id);
+                            m_spells[i].isApplyed = false;
+                        }
                     }
                 }
             }
@@ -131,7 +134,10 @@ namespace EcustGamejam
             {
                 m_Spell m_spell = new m_Spell();
                 m_spell.isApplyed = false;
-                m_spell.id = GameManager.Instance.spellID[i];
+                if (GameManager.Instance.spellID.Count > i )
+                {
+                    m_spell.id = GameManager.Instance.spellID[i];
+                }
                 m_spells.Add(m_spell);
             }
         }
@@ -141,20 +147,23 @@ namespace EcustGamejam
 
         private void CoinRoundOver()
         {
-            //改变符咒
+
+            //符咒效果生效
             List<Coin> coinResult = CoinManager.Instance.GetCoinsResult();
 
             for (int i = 0; i < 3; i++)
             {
-                if (coinResult[2 * i].isChosen && coinResult[2 * i].statu
-                    && coinResult[2 * i + 1].isChosen && coinResult[2 * i + 1].statu)
+                if (coinResult.Count > 2 * i + 1 && m_spells.Count > i )
                 {
-                    //SpellManager.instance.apply(m_spells[i].id)
+                    if (coinResult[2 * i].isChosen && coinResult[2 * i].statu
+                        && coinResult[2 * i + 1].isChosen && coinResult[2 * i + 1].statu)
+                    {
+                        SpellManager.Instance.SpellApply(m_spells[i].id);
 
-                    m_spells[i].isApplyed = true;
+                        m_spells[i].isApplyed = true;
+                    }
                 }
             }
-
 
             //改变卦位
             PositionManager.Instance.ChangePosition();

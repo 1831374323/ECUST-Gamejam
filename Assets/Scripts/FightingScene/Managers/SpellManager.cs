@@ -1,17 +1,17 @@
 using System.Collections.Generic;
 using FightingScene.SpellSystem;
 using UnityEngine;
+using Frame.Core;
 
 namespace FightingScene.Managers
 {
-    public class SpellManager : MonoBehaviour
+    public class SpellManager : SingletonBase<SpellManager>
     {
         [Tooltip("符咒列表")] public List<Spells> spells ;
 
         private void Start()
         {
-            SpellApply(0);
-            SpellDisable(0);
+           
         }
         
         /// <summary>
