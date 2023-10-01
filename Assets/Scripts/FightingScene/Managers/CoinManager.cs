@@ -56,7 +56,7 @@ namespace FightingScene.Managers
             if (!FightingManager.Instance.isFirstRound)
             {
                 bool isSuccess = player.SetMp(-tempMp);
-                Debug.Log(isSuccess);
+                //Debug.Log(isSuccess);
             }
 
             foreach (GameObject obj in coinList)

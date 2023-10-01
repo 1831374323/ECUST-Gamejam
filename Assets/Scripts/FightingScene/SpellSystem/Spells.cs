@@ -14,6 +14,9 @@ namespace FightingScene.SpellSystem
         /// 符咒的效果
         /// </summary>
         public virtual void Skill(){Debug.Log("调用符咒技能");} 
-        public virtual void KillSkill(){Debug.Log("符咒技能结束");} 
+        public virtual void KillSkill(){Debug.Log("符咒技能结束");}
+
+        public virtual void MotiveSkill(){ Debug.Log("调用符咒主动技能"); }
+        public virtual void KillMotiveSkill(){ Debug.Log("结束符咒主动技能"); }
     }
 }
