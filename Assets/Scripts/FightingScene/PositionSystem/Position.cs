@@ -8,4 +8,6 @@ public class Position : ScriptableObject
     public int id;
     public string m_name;
     public string color;
+    public ScriptableObject Attackskill;
+    public ScriptableObject defenceSkill;
 }

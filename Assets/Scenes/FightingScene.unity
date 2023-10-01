@@ -516,6 +516,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80448f69c933dc849b3bbed5d59c57a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positions:
+  - {fileID: 11400000, guid: b2c75d0139d3e9440aa0dd74c7602358, type: 2}
+  - {fileID: 11400000, guid: eef2957a40ec10a4f8683a1c503f6139, type: 2}
+  - {fileID: 11400000, guid: 45785c0c14e0c6e46845faa3618f4607, type: 2}
+  - {fileID: 11400000, guid: 5ff5e0d2d250bcb49aadd0275dee5fc9, type: 2}
+  - {fileID: 11400000, guid: 04d7ea7f98b45b4409e2e06c6a80967b, type: 2}
+  - {fileID: 11400000, guid: 4e7d5ca5496388e4ebe87f3177cf06fc, type: 2}
+  - {fileID: 11400000, guid: 60253b6c921e80f4ca7c1becfd0a883b, type: 2}
+  - {fileID: 11400000, guid: e0bcd2a8ee28d7844a1cf765dbf8c1e2, type: 2}
+  currentPositionID: 0
 --- !u!114 &133276425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,6 +614,7 @@ MonoBehaviour:
   isFirstRound: 1
   player: {fileID: 542887751}
   enemy: {fileID: 1506566576}
+  m_spells: []
 --- !u!1 &179166557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,6 +1322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f0e196c016b094296b72c64ba99260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellID: 020000000300000004000000
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

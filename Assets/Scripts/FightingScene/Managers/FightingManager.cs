@@ -5,6 +5,8 @@ using Frame.Core;
 using System;
 using FightingScene.Managers;
 using FightingScene.UnitSystem;
+using FightingScene.CoinSystem;
+using FightingScene.SpellSystem;
 
 namespace EcustGamejam
 {
@@ -21,11 +23,18 @@ namespace EcustGamejam
         public UnitMono player;
         public UnitMono enemy;
 
-        Action OnPlayerRoundStartAction;
-        Action OnPlayerRoundEndAction;
+        [SerializeField]
+        List<m_Spell> m_spells = new List<m_Spell>();
 
-        Action OnEnemyRoundStartAction;
-        Action OnEnemyRoundEndAction;
+        #region -------------Actions-------------
+
+        public Action OnPlayerRoundStartAction;
+        public Action OnPlayerRoundEndAction;
+
+        public Action OnEnemyRoundStartAction;
+        public Action OnEnemyRoundEndAction;
+
+        #endregion
 
         void Start()
         {
@@ -36,6 +45,8 @@ namespace EcustGamejam
 
             OnEnemyRoundStartAction = null;
             OnEnemyRoundEndAction += EnemyRoundEnd;
+
+            SpellInitial();
 
             StartCoroutine(RoundControllor());
         }
@@ -54,6 +65,7 @@ namespace EcustGamejam
             PlayerRound2 = 3,
         }
 
+        //流程化回合控制
         IEnumerator RoundControllor()
         {
             while (this != null)
@@ -93,14 +105,59 @@ namespace EcustGamejam
                     isFirstRound = false;
                 }
 
+                //注销符咒效果
+                for (int i = 0; i < 3; i++)
+                {
+                    if (m_spells[i].isApplyed)
+                    {
+                        //SpellManager.instance......
+                        m_spells[i].isApplyed = false;
+                    }
+                }
             }
         }
-        #region -------------CoinRound-------------
+
+        #region -------------Spell-------------
+        [Serializable]
+        class m_Spell
+        {
+            public int id;
+            public bool isApplyed;
+        }
+
+        void SpellInitial()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                m_Spell m_spell = new m_Spell();
+                m_spell.isApplyed = false;
+                m_spell.id = GameManager.Instance.spellID[i];
+                m_spells.Add(m_spell);
+            }
+        }
+        #endregion
+
+        #region -------------CoinRound-------------改变符咒、卦位、确定回合顺序
 
         private void CoinRoundOver()
         {
-            //Debug.Log("我知道了现在硬币回合结束");
-            //改变属性
+            //改变符咒
+            List<Coin> coinResult = CoinManager.Instance.GetCoinsResult();
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (coinResult[2 * i].isChosen && coinResult[2 * i].statu
+                    && coinResult[2 * i + 1].isChosen && coinResult[2 * i + 1].statu)
+                {
+                    //SpellManager.instance.apply(m_spells[i].id)
+
+                    m_spells[i].isApplyed = true;
+                }
+            }
+
+
+            //改变卦位
+            PositionManager.Instance.ChangePosition();
             //判断速度,根据速度确定回合顺序
             if (player.speed >= enemy.speed * 2)
             {

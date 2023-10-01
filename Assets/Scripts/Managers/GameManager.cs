@@ -8,9 +8,9 @@ namespace EcustGamejam
 {
     public class GameManager : SingletonBase<GameManager>
     {
+        public List<int> spellID= new List<int>();
 
         void Awake()
- 
         {
             DontDestroyOnLoad(this.gameObject);
         }
