@@ -6,6 +6,7 @@ using Frame.Core;
 using UnityEngine;
 using UnityEngine.UI;
 using FightingScene.UnitSystem;
+using UnityEngine.Serialization;
 
 namespace FightingScene.Managers
 {
@@ -14,11 +15,16 @@ namespace FightingScene.Managers
         [SerializeField, Tooltip("玩家所选择钱币")]
         public List<GameObject> coinList = new List<GameObject>();
 
+        [SerializeField, Tooltip("硬币正面图")] private Sprite coinSpriteFront;
+        [SerializeField, Tooltip("硬币反面图")] private Sprite coinSpriteBack;
+        
         [Tooltip("战斗界面的钱币UI文本")] public List<Text> coinTextList = new List<Text>();
+        [Tooltip("战斗界面的钱币UI图片")] public List<Image> coinImageList = new List<Image>();
         [SerializeField, Tooltip("战斗界面硬币UI")] private GameObject coinFightUI;
 
         [SerializeField, Tooltip("投掷硬币UI")] private GameObject coinUI;
         [Tooltip("投掷钱币按钮")] public Button rollButton;
+        [Tooltip("进入战斗按钮")] public Button enterFightButton;
 
         [Tooltip("硬币回合")]public Action onCoinTurnEndAction;
         public Action onCoinTurnStartAction;
@@ -46,6 +52,8 @@ namespace FightingScene.Managers
             coinUI.SetActive(false);
             //战斗中硬币状态栏出现
             coinFightUI.SetActive(true);
+            //进入战斗按钮在投掷钱币之前不会出现
+            enterFightButton.interactable = false;
         }
 
         /// <summary>
@@ -66,6 +74,7 @@ namespace FightingScene.Managers
                 {
                     coin.DoRandom();
                     coin.coinText.text = (coin.statu == true) ? "正" : "反";
+                    coin.GetComponent<Image>().sprite=(coin.statu == true) ? coinSpriteFront : coinSpriteBack;
                 }
             }
         }
@@ -78,6 +87,7 @@ namespace FightingScene.Managers
             List<Coin> coins = GetCoinsResult();
             for (int i = 0; i < coinList.Count; i++)
             {
+                coinImageList[i].sprite = coins[i].GetComponent<Image>().sprite;
                 coinTextList[i].text = coins[i].coinText.text;
             }
         }
@@ -111,7 +121,8 @@ namespace FightingScene.Managers
         /// </summary>
         public void DisableButton()
         {
-            rollButton.GetComponent<Button>().interactable = false;
+            rollButton.interactable = false;
+            enterFightButton.interactable = true;
         }
 
         /// <summary>
@@ -120,9 +131,9 @@ namespace FightingScene.Managers
         private void CoinTurnStart()
         {
             coinUI.SetActive(true);
-            rollButton.GetComponent<Button>().interactable = true;
+            rollButton.interactable = true;
             coinFightUI.SetActive(false);
-            
+            enterFightButton.interactable = false;
             bool isSuccess = player.SetMp(player.cureMp);
         }
 
