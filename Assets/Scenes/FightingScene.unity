@@ -500,6 +500,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d145a3b6cb39eb5458ac901c33b1f18c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spells:
+  - {fileID: 11400000, guid: 0e25785577b8ffd45bab63b47a7a8647, type: 2}
+  - {fileID: 11400000, guid: af6137bde15fc07448f437cafb78c3f0, type: 2}
+  - {fileID: 11400000, guid: d905f5b94fc060941a049accb93fa48f, type: 2}
 --- !u!114 &133276424
 MonoBehaviour:
   m_ObjectHideFlags: 0

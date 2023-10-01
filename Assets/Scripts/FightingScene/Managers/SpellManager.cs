@@ -1,18 +1,35 @@
-using System.Collections;
 using System.Collections.Generic;
+using FightingScene.SpellSystem;
 using UnityEngine;
 
-public class SpellManager : MonoBehaviour
+namespace FightingScene.Managers
 {
-    // Start is called before the first frame update
-    void Start()
+    public class SpellManager : MonoBehaviour
     {
-        
-    }
+        [Tooltip("符咒列表")] public List<Spells> spells ;
 
-    // Update is called once per frame
-    void Update()
-    {
+        private void Start()
+        {
+            SpellApply(0);
+            SpellDisable(0);
+        }
         
+        /// <summary>
+        /// 使这个id的符咒生效
+        /// </summary>
+        /// <param name="id"></param>
+        public void SpellApply(int id)
+        {
+            spells[id].Skill();
+        }
+        
+        /// <summary>
+        /// 使这个id的符咒失效
+        /// </summary>
+        /// <param name="id"></param>
+        public void SpellDisable(int id)
+        {
+            spells[id].KillSkill();
+        }
     }
 }
