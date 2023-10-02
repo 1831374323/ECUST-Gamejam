@@ -497,9 +497,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spells:
-  - {fileID: 11400000, guid: 0e25785577b8ffd45bab63b47a7a8647, type: 2}
-  - {fileID: 11400000, guid: af6137bde15fc07448f437cafb78c3f0, type: 2}
-  - {fileID: 11400000, guid: d905f5b94fc060941a049accb93fa48f, type: 2}
+  - {fileID: 11400000, guid: b7ede6cce2f8001449930326d4c99c43, type: 2}
+  - {fileID: 11400000, guid: dee3b5b48a00eb14492d6815bbcd1411, type: 2}
+  - {fileID: 11400000, guid: ddb66174a2c2f4c41bdc0ee96cce94fb, type: 2}
+  enemy: {fileID: 1506566576}
+  player: {fileID: 542887751}
 --- !u!114 &133276424
 MonoBehaviour:
   m_ObjectHideFlags: 0

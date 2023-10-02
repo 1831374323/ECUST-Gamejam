@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6168d213c55a44493fedb99e74d1f0, type: 3}
+  m_Script: {fileID: 11500000, guid: f9add5e2a297afc439a30a341b1e9ddd, type: 3}
   m_Name: Spell_Dog
   m_EditorClassIdentifier: 
   id: 10
   name: "\u72D7\u7B26\u5492"
-  description: "\u4E00\u6B21\u6218\u6597\u4EC5\u4E00\u6B21\uFF0C\u6700\u540E\u5269\u4F591\u70B9\u751F\u547D\u503C\u65F6\u4E0D\u6B7B\u4EA1\uFF0C1\u56DE\u5408\u5185\u514D\u75AB\u4F24\u5BB3"
+  description: "\u6C38\u8FDC\u5E74\u8F7B"
+  activeSkill: {fileID: 11400000, guid: f548f9ff83654d144b28fbe46749e94a, type: 2}
+  passiveSkill: {fileID: 11400000, guid: b76aa9d840d80df41b3818335df31eab, type: 2}
