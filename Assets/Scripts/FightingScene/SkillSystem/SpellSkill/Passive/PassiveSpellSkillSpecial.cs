@@ -10,12 +10,12 @@ namespace FightingScene.SkillSystem.SpellSkill.Passive
         public override void SkillApply(UnitMono player,UnitMono enemy)
         {
             Debug.Log("这是" + this.m_name + "的调用技能：");
-            
+            FightingManager.Instance.ChangeCriticalState(true);
         }
         public override void SkillDisable(UnitMono player,UnitMono enemy)
         {
             Debug.Log("这是" + this.m_name + "的停止调用技能：");
-            
+            FightingManager.Instance.ChangeCriticalState(false);
         }
     }
 }

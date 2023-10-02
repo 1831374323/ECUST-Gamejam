@@ -20,7 +20,7 @@ namespace FightingScene.Managers
         /// <param name="id"></param>
         public void SpellApply(int id)
         {
-            spells[id].activeSkill.SkillApply(player, enemy);
+            spells[id].passiveSkill.SkillApply(player, enemy);
         }
         
         /// <summary>
@@ -29,7 +29,7 @@ namespace FightingScene.Managers
         /// <param name="id"></param>
         public void SpellDisable(int id)
         {
-            spells[id].activeSkill.SkillDisable(player, enemy);
+            spells[id].passiveSkill.SkillDisable(player, enemy);
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace FightingScene.Managers
         /// <param name="id"></param>
         public void SpellMotive(int id)
         {
-            spells[id].passiveSkill.SkillApply(player, enemy);
+            spells[id].activeSkill.SkillApply(player, enemy);
         }
         
         /// <summary>
@@ -47,7 +47,7 @@ namespace FightingScene.Managers
         /// <param name="id"></param>
         public void SpellMotiveDisable(int id)
         {
-            spells[id].passiveSkill.SkillDisable(player, enemy);
+            spells[id].activeSkill.SkillDisable(player, enemy);
         }
     }
 }
