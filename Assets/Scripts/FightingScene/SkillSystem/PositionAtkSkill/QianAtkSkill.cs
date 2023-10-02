@@ -4,14 +4,15 @@ using UnityEngine;
 
 namespace EcustGamejam
 {
-    [CreateAssetMenu(menuName ="MyData/Skill/QianAtk")]
+    [CreateAssetMenu(menuName = "MyData/Skill/QianAtk")]
     public class QianAtkSkill : PositionAtkSkill
     {
-        public int value;
-        protected override float GetAtkValue()
+        [SerializeField]
+        List<int> atkValue = new List<int>();
+        protected override float GetAtkValue(int level)
         {
             Debug.Log("Ç¬½øÐÐ¹¥»÷");
-            return value;
+            return atkValue[level];
         }
 
         // Start is called before the first frame update

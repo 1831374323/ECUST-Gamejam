@@ -20,6 +20,6 @@ public class test : MonoBehaviour
 
     public void click()
     {
-        skill.SkillApply(FightingManager.Instance.player,FightingManager.Instance.enemy);
+        skill.SkillApply(FightingManager.Instance.player,FightingManager.Instance.enemy,0);
     }
 }

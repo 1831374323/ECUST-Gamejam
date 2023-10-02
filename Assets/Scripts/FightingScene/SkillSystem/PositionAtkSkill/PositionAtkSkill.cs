@@ -4,13 +4,24 @@ using System;
 
 namespace EcustGamejam
 {
-    public abstract class PositionAtkSkill : SkillBase
+    public abstract class PositionAtkSkill : PositionSkill
     {
-        public override void SkillApply(UnitMono skillUser, UnitMono target)
+        public override void SkillApply(UnitMono skillUser, UnitMono target, int level)
         {
-            base.SkillApply(skillUser, target);
 
-            float atkValue = GetAtkValue();
+            base.SkillApply(skillUser, target, level);
+
+
+            if (MpCost.Count > level)
+            {
+                if (!skillUser.SetMp(-MpCost[level]))
+                {
+                    Debug.Log("蓝量不足");
+                    return;
+                }
+            }
+
+            float atkValue = GetAtkValue(level);
 
             //克制关系
             if (PositionManager.Instance.GetCounterRelation(skillUser, target)
@@ -41,12 +52,12 @@ namespace EcustGamejam
             target.SetHp((int)-atkValue);
         }
 
-        protected abstract float GetAtkValue();
+        protected abstract float GetAtkValue(int level);
 
 
-        public override void SkillDisable(UnitMono skillUser, UnitMono target)
+        public override void SkillDisable(UnitMono skillUser, UnitMono target, int level)
         {
-            base.SkillDisable(skillUser, target);
+            base.SkillDisable(skillUser, target, level);
         }
     }
 }

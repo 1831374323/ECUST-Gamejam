@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Qian Atk Skill
   m_EditorClassIdentifier: 
   m_name: 
-  value: 10
+  MpCost: 140000001e00000032000000
+  atkValue: 140000001e0000002d000000
