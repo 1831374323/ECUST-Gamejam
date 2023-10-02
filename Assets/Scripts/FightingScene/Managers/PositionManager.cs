@@ -4,6 +4,7 @@ using UnityEngine;
 using Frame.Core;
 using FightingScene.Managers;
 using FightingScene.CoinSystem;
+using FightingScene.UnitSystem;
 
 namespace EcustGamejam
 {
@@ -11,10 +12,7 @@ namespace EcustGamejam
     {
         List<Coin> coinResult = new List<Coin>();
         [SerializeField]
-        public List<Position> positions= new List<Position>();
-        [SerializeField]
-        int currentPositionID = 0;
-        public int CurrentPositionID { get { return currentPositionID; } }
+        public List<Position> positions = new List<Position>();
 
         void Start()
         {
@@ -31,7 +29,7 @@ namespace EcustGamejam
         /// <summary>
         /// 根据当前钱币结果改变位置
         /// </summary>
-        public void ChangePosition()
+        public void ChangePosition(UnitMono unit)
         {
 
             coinResult = CoinManager.Instance.GetCoinsResult();
@@ -39,17 +37,46 @@ namespace EcustGamejam
             {
                 if (coin.statu && coin.isChosen)
                 {
-                    if (currentPositionID < 7)
+                    if (unit.currentPosition < 7)
                     {
-                        currentPositionID++;
+                        unit.currentPosition++;
                     }
                     else
                     {
-                        currentPositionID = 0;
+                        unit.currentPosition = 0;
                     }
                 }
             }
 
+        }
+
+        /// <summary>
+        /// 获取克制关系
+        /// </summary>
+        /// <param name="attacker">发动攻击者</param>
+        /// <param name="attacked">被攻击者</param>
+        /// <returns></returns>
+        public CounterRelation GetCounterRelation(UnitMono attacker, UnitMono attacked)
+        {
+            if (positions[attacker.currentPosition].wuXing.counterID == positions[attacked.currentPosition].wuXing.id)
+            {
+                return CounterRelation.Counter;
+            }
+            else if (positions[attacker.currentPosition].wuXing.counteredID == positions[attacked.currentPosition].wuXing.id)
+            {
+                return CounterRelation.Countered;
+            }
+            else
+            {
+                return CounterRelation.None;
+            }
+        }
+
+        public enum CounterRelation
+        {
+            None,
+            Counter,
+            Countered,
         }
     }
 }

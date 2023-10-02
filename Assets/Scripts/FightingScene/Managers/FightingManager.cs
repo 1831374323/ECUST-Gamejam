@@ -166,7 +166,7 @@ namespace EcustGamejam
             }
 
             //改变卦位
-            PositionManager.Instance.ChangePosition();
+            PositionManager.Instance.ChangePosition(player);
             //判断速度,根据速度确定回合顺序
             if (player.speed >= enemy.speed * 2)
             {

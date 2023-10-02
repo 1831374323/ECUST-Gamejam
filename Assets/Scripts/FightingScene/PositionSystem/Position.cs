@@ -1,3 +1,4 @@
+using EcustGamejam;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,4 +11,5 @@ public class Position : ScriptableObject
     public string color;
     public ScriptableObject Attackskill;
     public ScriptableObject defenceSkill;
+    public WuXing wuXing;
 }
