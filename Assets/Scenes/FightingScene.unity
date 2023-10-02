@@ -496,10 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d145a3b6cb39eb5458ac901c33b1f18c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spells:
-  - {fileID: 11400000, guid: 0e25785577b8ffd45bab63b47a7a8647, type: 2}
-  - {fileID: 11400000, guid: af6137bde15fc07448f437cafb78c3f0, type: 2}
-  - {fileID: 11400000, guid: d905f5b94fc060941a049accb93fa48f, type: 2}
+  spells: []
 --- !u!114 &133276424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,7 +518,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4e7d5ca5496388e4ebe87f3177cf06fc, type: 2}
   - {fileID: 11400000, guid: 60253b6c921e80f4ca7c1becfd0a883b, type: 2}
   - {fileID: 11400000, guid: e0bcd2a8ee28d7844a1cf765dbf8c1e2, type: 2}
-  currentPositionID: 0
 --- !u!114 &133276425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1483,6 +1479,7 @@ MonoBehaviour:
   speed: 10
   criticalHitRate: 0
   criticalStrikeRate: 0
+  currentPosition: 0
 --- !u!1001 &632086616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2969,6 +2966,7 @@ MonoBehaviour:
   speed: 4
   criticalHitRate: 0
   criticalStrikeRate: 0
+  currentPosition: 0
 --- !u!114 &1546639475 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1643254249973152022, guid: 6a89ae0d0b46e064199fb7a5d05a876d, type: 3}
