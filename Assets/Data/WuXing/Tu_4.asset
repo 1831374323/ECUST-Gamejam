@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08fb507accc5e14a873d30d7fa1da6e, type: 3}
   m_Name: Tu_4
   m_EditorClassIdentifier: 
-  id: 0
-  m_name: 
-  counterID: 0
-  counteredID: 0
+  id: 4
+  m_name: "\u571F"
+  counterID: 2
+  counteredID: 1

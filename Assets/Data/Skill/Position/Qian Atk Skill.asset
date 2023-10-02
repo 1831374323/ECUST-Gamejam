@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d08fb507accc5e14a873d30d7fa1da6e, type: 3}
-  m_Name: Huo_3
+  m_Script: {fileID: 11500000, guid: fd4a62d19e4a8004a9f84115a61741d4, type: 3}
+  m_Name: Qian Atk Skill
   m_EditorClassIdentifier: 
-  id: 3
-  m_name: "\u706B"
-  counterID: 0
-  counteredID: 2
+  m_name: 
+  value: 10

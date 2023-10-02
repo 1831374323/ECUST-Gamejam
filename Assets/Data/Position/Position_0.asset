@@ -12,3 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13f164d58e7bda7479b4f7cb1e951706, type: 3}
   m_Name: Position_0
   m_EditorClassIdentifier: 
+  id: 0
+  m_name: "\u4E7E"
+  color: 
+  Attackskill: {fileID: 0}
+  defenceSkill: {fileID: 0}
+  wuXing: {fileID: 11400000, guid: 16047086a99fb1645b9e9b3d33b4284a, type: 2}

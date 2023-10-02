@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Jin_0
   m_EditorClassIdentifier: 
   id: 0
-  m_name: 
-  counterID: 0
-  counteredID: 0
+  m_name: "\u91D1"
+  counterID: 1
+  counteredID: 3

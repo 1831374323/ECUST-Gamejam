@@ -19,6 +19,7 @@ namespace EcustGamejam
         private List<RoundState> nextStates = new List<RoundState>();
         public bool isFirstRound = true;
         private bool isRoundOver = false;
+        public bool criticalState = false;
 
         public UnitMono player;
         public UnitMono enemy;
@@ -108,7 +109,7 @@ namespace EcustGamejam
                 //注销符咒效果
                 for (int i = 0; i < 3; i++)
                 {
-                    if (m_spells.Count > i )
+                    if (m_spells.Count > i)
                     {
                         if (m_spells[i].isApplyed)
                         {
@@ -134,7 +135,7 @@ namespace EcustGamejam
             {
                 m_Spell m_spell = new m_Spell();
                 m_spell.isApplyed = false;
-                if (GameManager.Instance.spellID.Count > i )
+                if (GameManager.Instance.spellID.Count > i)
                 {
                     m_spell.id = GameManager.Instance.spellID[i];
                 }
@@ -153,7 +154,7 @@ namespace EcustGamejam
 
             for (int i = 0; i < 3; i++)
             {
-                if (coinResult.Count > 2 * i + 1 && m_spells.Count > i )
+                if (coinResult.Count > 2 * i + 1 && m_spells.Count > i)
                 {
                     if (coinResult[2 * i].isChosen && coinResult[2 * i].statu
                         && coinResult[2 * i + 1].isChosen && coinResult[2 * i + 1].statu)
@@ -234,5 +235,9 @@ namespace EcustGamejam
 
         #endregion
 
+        public void ChangeCriticalState(bool state)
+        {
+            criticalState = state;
+        }
     }
 }
