@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9add5e2a297afc439a30a341b1e9ddd, type: 3}
-  m_Name: Spell_Chicken
+  m_Name: Spell_Special
   m_EditorClassIdentifier: 
-  id: 9
-  name: "\u53EA\u56E0\u7B26\u5492"
-  description: "\u9E21\u4F60\u592A\u7F8E"
-  activeSkill: {fileID: 11400000, guid: f687da6515f8ebb468df0a2df4e10f88, type: 2}
-  passiveSkill: {fileID: 11400000, guid: de3bc0744ad0f1e45b0d1dd5f19b3183, type: 2}
+  id: 12
+  name: "\u66B4\u51FB\u7B26\u5492"
+  description: "\u9020\u6210\u66B4\u51FB"
+  activeSkill: {fileID: 11400000, guid: 0251838a3b19b3c4dbed31388a839e2e, type: 2}
+  passiveSkill: {fileID: 11400000, guid: 01d6bc751a42b81419348ae98fead5e4, type: 2}
