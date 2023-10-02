@@ -18,6 +18,8 @@ namespace FightingScene.UnitSystem
         [Tooltip("人物暴击率")] public float criticalHitRate;
         [Tooltip("人物暴击倍率")] public float criticalStrikeRate;
 
+        [Tooltip("人物当前卦位")] public int currentPosition;
+
         /// <summary>
         /// 设置血量函数
         /// </summary>
