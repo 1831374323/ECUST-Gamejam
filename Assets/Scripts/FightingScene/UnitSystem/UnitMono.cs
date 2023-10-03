@@ -19,6 +19,8 @@ namespace FightingScene.UnitSystem
         [Tooltip("人物暴击倍率")] public float criticalStrikeRate;
 
         [Tooltip("人物当前卦位")] public int currentPosition;
+        
+        [Tooltip("人物当前护盾值")] public int shield;
 
         /// <summary>
         /// 设置血量函数
