@@ -746,7 +746,7 @@ MonoBehaviour:
   coinUI: {fileID: 419759318}
   rollButton: {fileID: 859374173}
   enterFightButton: {fileID: 1387993485}
-  tempMp: 5
+  tempMp: 4
   player: {fileID: 542887751}
   enemy: {fileID: 1506566576}
 --- !u!4 &133276428
@@ -2174,6 +2174,7 @@ MonoBehaviour:
   criticalHitRate: 0
   criticalStrikeRate: 0
   currentPosition: 0
+  shield: 0
 --- !u!1001 &632086616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4037,6 +4038,7 @@ MonoBehaviour:
   criticalHitRate: 0
   criticalStrikeRate: 0
   currentPosition: 0
+  shield: 0
 --- !u!1 &1518078881
 GameObject:
   m_ObjectHideFlags: 0
