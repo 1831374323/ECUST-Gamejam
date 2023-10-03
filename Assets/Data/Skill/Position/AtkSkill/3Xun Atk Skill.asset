@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13f164d58e7bda7479b4f7cb1e951706, type: 3}
-  m_Name: Position_5
+  m_Script: {fileID: 11500000, guid: 55a648c35347fc443b9edcbdd3013102, type: 3}
+  m_Name: 3Xun Atk Skill
   m_EditorClassIdentifier: 
-  id: 5
   m_name: 
-  color: 
-  Attackskill: {fileID: 11400000, guid: 090c5d0306b786c4cafaf39e774c3621, type: 2}
-  defenceSkill: {fileID: 0}
-  wuXing: {fileID: 11400000, guid: 7d71e038438d12b43849264a23f2b559, type: 2}
+  MpCost: 140000001e00000032000000
+  atkValue: 0a0000000f00000019000000
