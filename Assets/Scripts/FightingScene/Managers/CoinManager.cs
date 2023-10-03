@@ -58,7 +58,7 @@ namespace FightingScene.Managers
         }
 
         /// <summary>
-        /// 遍历硬币列表，直接调用硬币自带的随机函数，仅在第一回合不扣蓝
+        /// 投掷硬币函数，(每回合都会回蓝且一定大于最大的投掷消耗所以无需判定),遍历硬币列表，直接调用硬币自带的随机函数，仅在第一回合不扣蓝，投掷后禁止硬币的选择按钮
         /// </summary>
         public void RollChosenCoins()
         {
@@ -73,12 +73,13 @@ namespace FightingScene.Managers
                     coin.coinText.text = (coin.statu == true) ? "正" : "反";
                     coin.GetComponent<Image>().sprite=(coin.statu == true) ? coinSpriteFront : coinSpriteBack;
                 }
+                coin.GetComponent<Button>().interactable = false;
             }
             //不是第一回合就消蓝，选的硬币越多耗蓝越多
             if (!FightingManager.Instance.isFirstRound)
             {
                 bool isSuccess = player.SetMp(-m_TrueMp);
-                //Debug.Log("MP:"+m_TrueMp);
+                //Debug.Log(isSuccess + "    MP:" + m_TrueMp);
             }
         }
 
@@ -120,7 +121,7 @@ namespace FightingScene.Managers
         
 
         /// <summary>
-        /// 禁止使用投掷按钮
+        /// 禁止使用投掷按钮,激活进入战斗按钮
         /// </summary>
         public void DisableButton()
         {
@@ -129,7 +130,7 @@ namespace FightingScene.Managers
         }
 
         /// <summary>
-        /// 开始硬币回合
+        /// 开始硬币回合,激活coinUI和rollButton，隐藏coinFightUI，禁止enterFightButton，让硬币选择功能激活，玩家回蓝
         /// </summary>
         private void CoinTurnStart()
         {
@@ -137,6 +138,11 @@ namespace FightingScene.Managers
             rollButton.interactable = true;
             coinFightUI.SetActive(false);
             enterFightButton.interactable = false;
+            foreach (GameObject obj in coinList)
+            {
+                Coin coin = obj.GetComponent<Coin>();
+                coin.GetComponent<Button>().interactable = true;
+            }
             bool isSuccess = player.SetMp(player.cureMp);
         }
 

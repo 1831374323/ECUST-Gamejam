@@ -7,10 +7,10 @@ namespace FightingScene.UnitSystem
         [Tooltip("人物名")] public string unitName;
 
         [Tooltip("人物最大血量")] public int maxHp;
-        [Tooltip("人物当前血量")] private int currentHp;
+        [SerializeField, Tooltip("人物当前血量")] private int currentHp;
         
         [Tooltip("人物当前蓝量")] public int maxMp;
-        [Tooltip("人物当前蓝量")] private int currentMp;
+        [SerializeField, Tooltip("人物当前蓝量")] private int currentMp;
         [Tooltip("人物蓝量恢复值")] public int cureMp;
 
         [Tooltip("人物速度值")] public int speed;

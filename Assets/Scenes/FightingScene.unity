@@ -2166,14 +2166,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Player
   maxHp: 100
-  currentHp: 100
+  currentHp: 0
   maxMp: 1000
-  currentMp: 1000
+  currentMp: 0
   cureMp: 300
   speed: 10
   criticalHitRate: 0
   criticalStrikeRate: 0
   currentPosition: 0
+  shield: 0
 --- !u!1001 &632086616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4029,7 +4030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Enemy
   maxHp: 100
-  currentHp: 100
+  currentHp: 0
   maxMp: 0
   currentMp: 0
   cureMp: 0
@@ -4037,6 +4038,7 @@ MonoBehaviour:
   criticalHitRate: 0
   criticalStrikeRate: 0
   currentPosition: 0
+  shield: 0
 --- !u!1 &1518078881
 GameObject:
   m_ObjectHideFlags: 0
