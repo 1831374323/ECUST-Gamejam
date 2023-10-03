@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 4
   m_name: 
   color: 
-  Attackskill: {fileID: 0}
+  Attackskill: {fileID: 11400000, guid: 096b9bb6e526bc645867eb0ef8c3c530, type: 2}
   defenceSkill: {fileID: 0}
   wuXing: {fileID: 11400000, guid: f32f8dc2e6837e14492d47159040d472, type: 2}

@@ -52,6 +52,11 @@ namespace EcustGamejam
             target.SetHp((int)-atkValue);
         }
 
+        /// <summary>
+        /// 返回造成的伤害并执行其他效果
+        /// </summary>
+        /// <param name="level"></param>
+        /// <returns></returns>
         protected abstract float GetAtkValue(int level);
 
 

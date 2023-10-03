@@ -9,7 +9,7 @@ public class Position : ScriptableObject
     public int id;
     public string m_name;
     public string color;
-    public ScriptableObject Attackskill;
+    public PositionAtkSkill Attackskill;
     public ScriptableObject defenceSkill;
     public WuXing wuXing;
 }

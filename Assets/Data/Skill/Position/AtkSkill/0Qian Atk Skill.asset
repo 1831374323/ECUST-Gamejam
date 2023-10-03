@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13f164d58e7bda7479b4f7cb1e951706, type: 3}
-  m_Name: Position_3
+  m_Script: {fileID: 11500000, guid: fd4a62d19e4a8004a9f84115a61741d4, type: 3}
+  m_Name: 0Qian Atk Skill
   m_EditorClassIdentifier: 
-  id: 3
   m_name: 
-  color: 
-  Attackskill: {fileID: 11400000, guid: 19c7cf26f9568484a8fd6455220d431e, type: 2}
-  defenceSkill: {fileID: 0}
-  wuXing: {fileID: 11400000, guid: ad52cd82e8b5776498568cd963f9a855, type: 2}
+  MpCost: 140000001e00000032000000
+  atkValue: 140000001e0000002d000000
