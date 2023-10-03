@@ -29,7 +29,8 @@ namespace FightingScene.Managers
         [Tooltip("硬币回合")]public Action onCoinTurnEndAction;
         public Action onCoinTurnStartAction;
         
-        [Tooltip("投掷扣除的蓝量")] public int tempMp;
+        [Tooltip("投掷一个硬币扣除的蓝量")] public int tempMp;
+        [Tooltip("投掷所有硬币扣除的蓝量")] private int m_TrueMp;
         
         [Tooltip("玩家")] public UnitMono player;
         [Tooltip("敌人")] public UnitMono enemy;
@@ -61,21 +62,23 @@ namespace FightingScene.Managers
         /// </summary>
         public void RollChosenCoins()
         {
-            if (!FightingManager.Instance.isFirstRound)
-            {
-                bool isSuccess = player.SetMp(-tempMp);
-                //Debug.Log(isSuccess);
-            }
-
+            m_TrueMp = 0;
             foreach (GameObject obj in coinList)
             {
                 Coin coin = obj.GetComponent<Coin>();
                 if (coin.isChosen)
                 {
+                    m_TrueMp += tempMp;//计算耗蓝
                     coin.DoRandom();
                     coin.coinText.text = (coin.statu == true) ? "正" : "反";
                     coin.GetComponent<Image>().sprite=(coin.statu == true) ? coinSpriteFront : coinSpriteBack;
                 }
+            }
+            //不是第一回合就消蓝，选的硬币越多耗蓝越多
+            if (!FightingManager.Instance.isFirstRound)
+            {
+                bool isSuccess = player.SetMp(-m_TrueMp);
+                //Debug.Log("MP:"+m_TrueMp);
             }
         }
 
