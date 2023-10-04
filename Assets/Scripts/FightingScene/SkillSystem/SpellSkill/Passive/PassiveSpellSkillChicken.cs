@@ -18,6 +18,7 @@ namespace FightingScene.SkillSystem.SpellSkill.Passive
             Debug.Log("这是" + this.m_name + "的调用技能：降低敌人30%攻击速度（计算方式为原速度乘以0.7）并将敌人攻击力削弱为原先的0.8");
             m_EnemyPastSpeed = enemy.speed;
             enemy.speed = Mathf.RoundToInt((float)(enemy.speed * 0.7));
+            m_EnemyPastSpeed = m_EnemyPastSpeed - enemy.speed;
         }
         
         /// <summary>
@@ -28,7 +29,7 @@ namespace FightingScene.SkillSystem.SpellSkill.Passive
         public override void SkillDisable(UnitMono player,UnitMono enemy)
         {
             Debug.Log("这是" + this.m_name + "的停止调用技能");
-            enemy.speed = m_EnemyPastSpeed;
+            enemy.speed += m_EnemyPastSpeed;
         }
     }
 }

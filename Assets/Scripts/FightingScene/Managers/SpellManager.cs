@@ -13,7 +13,6 @@ namespace FightingScene.Managers
         [Tooltip("敌人")] public UnitMono enemy;
         [Tooltip("玩家")] public UnitMono player;
 
-
         /// <summary>
         /// 使这个id的符咒生效
         /// </summary>
