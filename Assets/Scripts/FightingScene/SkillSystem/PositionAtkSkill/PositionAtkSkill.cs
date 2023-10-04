@@ -53,7 +53,7 @@ namespace EcustGamejam
                 }
             }
 
-            target.SetHp((int)-atkValue);
+            FightingManager.Instance.DoDamage((int)atkValue, target);
         }
 
         /// <summary>

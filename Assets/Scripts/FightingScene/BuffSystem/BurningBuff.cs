@@ -24,7 +24,7 @@ namespace EcustGamejam
         {
             base.BuffEffect(base.target);
             Debug.Log("½øÐÐ×ÆÉÕ");
-            target.SetHp(-burningBuffSO.burningValue);
+            FightingManager.Instance.DoDamage(burningBuffSO.burningValue, base.target);
         }
 
 

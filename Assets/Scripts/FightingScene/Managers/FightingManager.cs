@@ -206,7 +206,7 @@ namespace EcustGamejam
         {
             if (roundState == RoundState.PlayerRound2)
             {
-                player.SetMp(player.cureMp/2);
+                player.SetMp(player.cureMp / 2);
             }
         }
 
@@ -245,6 +245,34 @@ namespace EcustGamejam
         public void ChangeCriticalState(bool state)
         {
             criticalState = state;
+        }
+
+         public float increaseValue = 1;
+         public float decreaseValue = 1;
+
+        public void DoDamage(int _value, UnitMono target)
+        {
+            bool isDead = false;
+            int value = _value;
+
+
+            isDead = !target.SetHp((int)(-value * increaseValue * decreaseValue));
+            Debug.Log($"增伤系数：{increaseValue}  减伤系数：{decreaseValue} 造成伤害：{(int)(-value * increaseValue * decreaseValue)}");
+
+            if (isDead)
+            {
+                switch (target.gameObject.name)
+                {
+                    case "Enemy":
+                        Debug.Log("游戏胜利");
+                        break;
+
+                    case "Player":
+                        Debug.Log("游戏失败");
+                        break;
+                }
+            }
+
         }
     }
 }
