@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace EcustGamejam
 {
-    public class Buff 
+    public class Buff
     {
         private Action myAction;
         private bool isFirstRound = true;
@@ -73,9 +73,13 @@ namespace EcustGamejam
         protected void BuffApply()
         {
             leftTurn--;
-            if (leftTurn < 0)
+            if (leftTurn == -1)
             {
                 BuffDisable(target);
+                
+            }
+            if (leftTurn < 0)
+            {
                 return;
             }
             if (buffSO.type == Type.OneTime)
@@ -102,6 +106,7 @@ namespace EcustGamejam
         {
             myAction -= BuffApply;
             Debug.Log($"Buff{buffSO.name}ʧЧ");
+
         }
     }
 }
