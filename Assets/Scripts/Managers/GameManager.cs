@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Frame.Core;
+using LevelChoosingScene;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,7 @@ namespace EcustGamejam
     public class GameManager : SingletonBase<GameManager>
     {
         public List<int> spellID= new List<int>();
+        public LevelMono level;
 
         void Awake()
         {
