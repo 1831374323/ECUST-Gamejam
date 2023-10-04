@@ -31,12 +31,32 @@ namespace FightingScene.UnitSystem
         /// <returns>返回false就是没血死掉了，true就是成功设置</returns>
         public bool SetHp(int x)
         {
-            if (currentHp + x < 0)//先判断血量够不够
+            if (x >= 0)//回血
             {
-                return false;
+                currentHp += x;
+                currentHp = (currentHp < maxHp) ? currentHp : maxHp;//防止治疗血量溢出
+                Debug.Log("回血" + x);
             }
-            currentHp += x;
-            currentHp = (currentHp < maxHp) ? currentHp : maxHp;//防止治疗血量溢出
+            else//扣血
+            {
+                if (currentHp + shield + x < 0)//先判断血量够不够
+                {
+                    return false;
+                }
+                else
+                {
+                    if (shield >= x)//先扣护盾
+                    {
+                        shield -= x;
+                    }
+                    else 
+                    { 
+                        currentHp = currentHp + shield - x;
+                        shield = 0;
+                    }
+                }
+                Debug.Log("扣血" + x);
+            }
             return true;
         }
 
@@ -54,6 +74,26 @@ namespace FightingScene.UnitSystem
             currentMp += x;
             currentMp = (currentMp < maxMp) ? currentMp : maxMp;//防止回蓝溢出
             return true;
+        }
+        
+        /// <summary>
+        /// 返回每次造成的伤害
+        /// </summary>
+        /// <param name="damage"></param>
+        /// <param name="hpValue"></param>
+        /// <param name="shieldValue"></param>
+        public void GetComingDamage(int damage, out int hpValue, out int shieldValue)
+        {
+            hpValue = 0;
+            if (this.shield > damage)
+            {
+                shieldValue = damage;
+            }
+            else
+            {
+                shieldValue = this.shield;
+                hpValue = damage - this.shield;
+            }
         }
 
     }
