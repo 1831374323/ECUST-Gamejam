@@ -10,7 +10,7 @@ namespace EcustGamejam
     public class GameManager : SingletonBase<GameManager>
     {
         public List<int> spellID= new List<int>();
-        public LevelMono level;
+        public LevelScriptObject level;
 
         void Awake()
         {
@@ -54,6 +54,10 @@ namespace EcustGamejam
                     }
             }
         }
-
+        
+        public void LevelVectory()
+        {
+            PlayerPrefs.SetInt("MaxtLevelID", level.levelId);
+        }
     }
 }
