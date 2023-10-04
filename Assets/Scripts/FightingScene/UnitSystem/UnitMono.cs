@@ -47,11 +47,11 @@ namespace FightingScene.UnitSystem
                 {
                     if (shield >= x)//先扣护盾
                     {
-                        shield -= x;
+                        shield += x;
                     }
                     else 
                     { 
-                        currentHp = currentHp + shield - x;
+                        currentHp = currentHp + shield + x;
                         shield = 0;
                     }
                 }
