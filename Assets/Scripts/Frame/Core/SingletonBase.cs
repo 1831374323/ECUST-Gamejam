@@ -34,6 +34,7 @@ namespace Frame.Core
                             DontDestroyOnLoad(singleton);
                         }
                     }
+                    
 
                     return m_instance;
                 }
