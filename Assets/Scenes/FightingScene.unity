@@ -2175,7 +2175,7 @@ MonoBehaviour:
   speed: 10
   criticalHitRate: 0
   criticalStrikeRate: 0
-  currentPosition: 0
+  currentPosition: 5
   shield: 0
 --- !u!1001 &632086616
 PrefabInstance:

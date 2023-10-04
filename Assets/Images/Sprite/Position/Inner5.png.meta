@@ -105,7 +105,32 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Inner5_0
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 412
+        width: 563
+        height: 317
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -269.5, y: -152.5}
+        - {x: -155.5, y: 147.5}
+        - {x: 121.5, y: 153.5}
+        - {x: 244.5, y: -151.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a4594aaa7d7534386946312d6043fc
+      internalID: 162222490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -116,7 +141,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Inner5_0: 162222490
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

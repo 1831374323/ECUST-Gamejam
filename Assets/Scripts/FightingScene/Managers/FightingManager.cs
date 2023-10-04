@@ -29,6 +29,8 @@ namespace EcustGamejam
 
         #region -------------Actions-------------
 
+        public Action OnWholeRoundStartAction;
+
         public Action OnPlayerRoundStartAction;
         public Action OnPlayerRoundEndAction;
 
@@ -74,6 +76,7 @@ namespace EcustGamejam
                 //初始化
                 nextStates.Clear();
                 nextStates.Add(RoundState.CoinRound);
+                OnWholeRoundStartAction?.Invoke();
 
                 //进行回合阶段
                 while (nextStates.Count > 0)
@@ -203,7 +206,7 @@ namespace EcustGamejam
         {
             if (roundState == RoundState.PlayerRound2)
             {
-                player.SetMp(0);
+                player.SetMp(player.cureMp/2);
             }
         }
 

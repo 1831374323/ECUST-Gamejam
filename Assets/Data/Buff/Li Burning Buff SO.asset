@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8a0db6cd8acc184d8718f5edb1a71ea, type: 3}
-  m_Name: 5Li Atk Skill
+  m_Script: {fileID: 11500000, guid: 04ace70f799f6b943a15a1ab8bf1a22f, type: 3}
+  m_Name: Li Burning Buff SO
   m_EditorClassIdentifier: 
   m_name: 
-  MpCost: 140000001e00000032000000
-  atkValue: 0f000000140000001e000000
-  burningBuffSO: {fileID: 11400000, guid: 2604c7b10ac94b441af6bba3294415bf, type: 2}
+  existTurn: 3
+  applyTime: 0
+  type: 0
+  burningValue: 5

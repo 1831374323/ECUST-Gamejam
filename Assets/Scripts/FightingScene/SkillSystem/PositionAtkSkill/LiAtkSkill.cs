@@ -9,9 +9,14 @@ namespace EcustGamejam
     {
         [SerializeField]
         List<int> atkValue = new List<int>();
+        public BurningBuffSO burningBuffSO;
         protected override float GetAtkValue(int level)
         {
             Debug.Log($"Àë½øÐÐ{level}½×¹¥»÷");
+
+            BurningBuff burningBuff = new BurningBuff(burningBuffSO);
+            burningBuff.AddBuff(base.m_target);
+
             return atkValue[level];
         }
 
