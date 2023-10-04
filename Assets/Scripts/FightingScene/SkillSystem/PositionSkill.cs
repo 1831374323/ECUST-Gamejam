@@ -12,7 +12,7 @@ namespace EcustGamejam
         public List<int> MpCost = new List<int>();
 
         /// <summary>
-        /// level=技能阶级(0,1,2)
+        /// skillUser为释放者；target为非释放者，并非技能作用对象;level=技能阶级(0,1,2)
         /// </summary>
         /// <param name="skillUser"></param>
         /// <param name="target"></param>

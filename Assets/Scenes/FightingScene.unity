@@ -631,12 +631,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 133276428}
+  - component: {fileID: 133276429}
   - component: {fileID: 133276427}
   - component: {fileID: 133276426}
   - component: {fileID: 133276425}
   - component: {fileID: 133276424}
   - component: {fileID: 133276423}
-  - component: {fileID: 133276429}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -2389,7 +2389,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 640347759}
         m_TargetAssemblyTypeName: EcustGamejam.SkillButton, Assembly-CSharp
-        m_MethodName: OnAtkClick
+        m_MethodName: OnDefenceClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2547,7 +2547,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 761541119}
         m_TargetAssemblyTypeName: EcustGamejam.SkillButton, Assembly-CSharp
-        m_MethodName: OnAtkClick
+        m_MethodName: OnDefenceClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4030,7 +4030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Enemy
   maxHp: 100
-  currentHp: 0
+  currentHp: 100
   maxMp: 0
   currentMp: 0
   cureMp: 0
@@ -4586,7 +4586,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1963004220}
         m_TargetAssemblyTypeName: EcustGamejam.SkillButton, Assembly-CSharp
-        m_MethodName: OnAtkClick
+        m_MethodName: OnDefenceClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

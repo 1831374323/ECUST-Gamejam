@@ -118,6 +118,10 @@ namespace EcustGamejam
                         }
                     }
                 }
+
+                //消除护盾值
+                player.shield = 0;
+                enemy.shield = 0;
             }
         }
 

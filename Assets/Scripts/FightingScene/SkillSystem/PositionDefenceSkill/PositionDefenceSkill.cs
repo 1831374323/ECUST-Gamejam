@@ -48,7 +48,7 @@ namespace EcustGamejam
             //    }
             //}
 
-            //target.SetHp((int)-defValue);
+            skillUser.shield += (int)defValue;
         }
 
         /// <summary>

@@ -32,8 +32,12 @@ namespace EcustGamejam
 
         public void OnDefenceClick()
         {
-            //PositionManager.Instance.positions[player.currentPosition].
-            //        Attackskill.SkillApply(player, enemy, level);
+            if (PositionManager.Instance.positions[player.currentPosition].
+                   defenceSkill != null)
+            {
+                PositionManager.Instance.positions[player.currentPosition].
+                    defenceSkill.SkillApply(player, enemy, level);
+            }
         }
     }
 }
