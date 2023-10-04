@@ -15,5 +15,6 @@ MonoBehaviour:
   id: 9
   name: "\u53EA\u56E0\u7B26\u5492"
   description: "\u9E21\u4F60\u592A\u7F8E"
+  spellSprite: {fileID: 21300000, guid: 7b568f4a6377a8642a32831a7e117992, type: 3}
   activeSkill: {fileID: 11400000, guid: f687da6515f8ebb468df0a2df4e10f88, type: 2}
   passiveSkill: {fileID: 11400000, guid: de3bc0744ad0f1e45b0d1dd5f19b3183, type: 2}
