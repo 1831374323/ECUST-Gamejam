@@ -5,7 +5,7 @@ using FightingScene.UnitSystem;
 
 namespace EcustGamejam
 {
-    
+
     public class BurningBuff : Buff
     {
         private BurningBuffSO burningBuffSO;
@@ -17,14 +17,19 @@ namespace EcustGamejam
         protected override void BuffDisable(UnitMono _target)
         {
             base.BuffDisable(base.target);
-            
+
         }
 
         protected override void BuffEffect(UnitMono _target)
         {
             base.BuffEffect(base.target);
-            Debug.Log("进行灼烧");
-            FightingManager.Instance.DoDamage(burningBuffSO.burningValue, base.target);
+            Debug.Log(burningBuffSO.probability[level] + "%概率进行灼烧");
+
+            if (Random.Range(0, 100) < burningBuffSO.probability[base.level])
+            {
+
+                FightingManager.Instance.DoDamage(burningBuffSO.burningValue, base.target);
+            }
         }
 
 

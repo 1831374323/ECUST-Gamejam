@@ -11,8 +11,8 @@ namespace EcustGamejam
         List<int> atkValue = new List<int>();
         protected override float GetAtkValue(int level)
         {
-            Debug.Log($"艮进行{level}阶攻击");
-            return atkValue[level];
+            Debug.Log($"艮进行{level}阶攻击,额外造成{m_skillUser.cureMp/5}伤害");
+            return atkValue[level]+m_skillUser.cureMp/5;
         }
 
     }

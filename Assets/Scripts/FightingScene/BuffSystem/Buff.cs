@@ -13,6 +13,7 @@ namespace EcustGamejam
         private int leftTurn;
         protected UnitMono target;
         protected BuffSO buffSO;
+        protected int level;
 
         public Buff(BuffSO _buffSO)
         {
@@ -32,9 +33,10 @@ namespace EcustGamejam
             OneTime
         }
 
-        public void AddBuff(UnitMono _target)
+        public void AddBuff(UnitMono _target,int _level=0)
         {
             target = _target;
+            level= _level;
 
             switch (buffSO.applyTime)
             {
@@ -42,29 +44,29 @@ namespace EcustGamejam
                     if (_target.gameObject.name == "Player")
                     {
                         FightingManager.Instance.OnPlayerRoundStartAction += BuffApply;
-                        myAction = FightingManager.Instance.OnPlayerRoundStartAction;
+                        //myAction = FightingManager.Instance.OnPlayerRoundStartAction;
                     }
                     else
                     {
                         FightingManager.Instance.OnEnemyRoundStartAction += BuffApply;
-                        myAction = FightingManager.Instance.OnEnemyRoundStartAction;
+                        //myAction = FightingManager.Instance.OnEnemyRoundStartAction;
                     }
                     break;
                 case ApplyTime.TurnEnd:
                     if (_target.gameObject.name == "Player")
                     {
                         FightingManager.Instance.OnPlayerRoundEndAction += BuffApply;
-                        myAction = FightingManager.Instance.OnPlayerRoundEndAction;
+                        //myAction = FightingManager.Instance.OnPlayerRoundEndAction;
                     }
                     else
                     {
                         FightingManager.Instance.OnEnemyRoundStartAction += BuffApply;
-                        myAction = FightingManager.Instance.OnEnemyRoundStartAction;
+                        //myAction = FightingManager.Instance.OnEnemyRoundStartAction;
                     }
                     break;
                 case ApplyTime.wholeTurnStart:
                     FightingManager.Instance.OnWholeRoundStartAction += BuffApply;
-                    myAction = FightingManager.Instance.OnWholeRoundStartAction;
+                    //myAction = FightingManager.Instance.OnWholeRoundStartAction;
                     break;
                 default:
                     break;

@@ -6,5 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "MyData/Buff/BurningBuff")]
 public class BurningBuffSO : BuffSO
 {
+    public List<int> probability = new List<int>();
     public int burningValue;
 }

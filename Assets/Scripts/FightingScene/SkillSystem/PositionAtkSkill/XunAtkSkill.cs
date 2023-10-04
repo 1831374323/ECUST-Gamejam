@@ -9,8 +9,12 @@ namespace EcustGamejam
     {
         [SerializeField]
         List<int> atkValue = new List<int>();
+        public GetMpBuffSO getMpBuffSO;
         protected override float GetAtkValue(int level)
         {
+            GetMpBuff getMpBuff = new GetMpBuff(getMpBuffSO);
+            getMpBuff.AddBuff(m_skillUser, level);
+
             Debug.Log($"Ùã½øÐÐ{level}½×¹¥»÷");
             return atkValue[level];
         }

@@ -217,6 +217,7 @@ namespace EcustGamejam
 
         private void PlayerRoundEnd()
         {
+            Debug.Log("玩家回合结束");
             isRoundOver = true;
         }
 
@@ -237,6 +238,7 @@ namespace EcustGamejam
 
         private void EnemyRoundEnd()
         {
+            Debug.Log("敌人回合结束");
             isRoundOver = true;
         }
 
@@ -255,10 +257,8 @@ namespace EcustGamejam
             bool isDead = false;
             int value = _value;
 
-
-            isDead = !target.SetHp((int)(-value * increaseValue * decreaseValue));
-            Debug.Log($"增伤系数：{increaseValue}  减伤系数：{decreaseValue} 造成伤害：{(int)(-value * increaseValue * decreaseValue)}");
-
+            isDead = !target.SetHp((int)(-value));
+            
             if (isDead)
             {
                 switch (target.gameObject.name)

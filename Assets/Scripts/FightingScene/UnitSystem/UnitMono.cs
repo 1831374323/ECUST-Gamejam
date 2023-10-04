@@ -24,6 +24,9 @@ namespace FightingScene.UnitSystem
         
         [Tooltip("人物当前护盾值")] public int shield;
 
+        [Tooltip("人物当前增伤系数")] public float increaseValue;
+        [Tooltip("人物当前减伤系数")] public float decreaseValue;
+
         /// <summary>
         /// 设置血量函数
         /// </summary>
@@ -31,6 +34,9 @@ namespace FightingScene.UnitSystem
         /// <returns>返回false就是没血死掉了，true就是成功设置</returns>
         public bool SetHp(int x)
         {
+            Debug.Log($"增伤系数：{increaseValue}  减伤系数：{decreaseValue} 造成伤害：{(int)(-x * increaseValue * decreaseValue)}");
+            x = (int)(x * increaseValue * decreaseValue);
+
             if (x >= 0)//回血
             {
                 currentHp += x;
@@ -84,6 +90,8 @@ namespace FightingScene.UnitSystem
         /// <param name="shieldValue"></param>
         public void GetComingDamage(int damage, out int hpValue, out int shieldValue)
         {
+            damage = (int)(damage * increaseValue * decreaseValue);
+
             hpValue = 0;
             if (this.shield > damage)
             {
