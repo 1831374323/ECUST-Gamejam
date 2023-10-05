@@ -89,7 +89,7 @@ namespace LevelChoosingScene
         /// </summary>
         /// <param name="spellID"></param>
         /// <returns></returns>
-        private int ConvertID(int spellID)
+        public int ConvertID(int spellID)
         {
             int i = 0;
             for (i = 0; i < spellChoosingObjects.Count; i++)

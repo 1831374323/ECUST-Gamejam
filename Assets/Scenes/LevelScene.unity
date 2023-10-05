@@ -3153,6 +3153,7 @@ MonoBehaviour:
   enemyImage: {fileID: 1540971948}
   enemyInfoText: {fileID: 1388308393}
   currentLevel: {fileID: 11400000, guid: e4cdeb969b984894789f862b165cd81a, type: 2}
+  specialSpellId: 2
 --- !u!114 &1371711114
 MonoBehaviour:
   m_ObjectHideFlags: 0

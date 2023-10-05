@@ -15,10 +15,13 @@ namespace LevelChoosingScene
         [SerializeField,Tooltip("敌人图片")] private Image enemyImage;
         [SerializeField,Tooltip("敌人信息")] private Text enemyInfoText;
         [SerializeField,Tooltip("敌人信息")] private LevelScriptObject currentLevel;
+        [SerializeField,Tooltip("暴击符咒ID")] private int specialSpellId;
 
 
         private void Start()
         {
+            GameManager.Instance.spellID.Clear();//重置符咒位
+            
             for (int i = 0; i < levels.Count; i++)//给按钮绑定事件
             {
                 if (levelButtons[i] != null)
@@ -61,9 +64,11 @@ namespace LevelChoosingScene
         public void SendLevelInfo()
         {
             GameManager.Instance.level = currentLevel;
-            if (SpellChoosingManager.Instance.spell1.spellID > 0) {GameManager.Instance.spellID.Add(SpellChoosingManager.Instance.spell1.spellID); }
-            if (SpellChoosingManager.Instance.spell2.spellID > 0) {GameManager.Instance.spellID.Add(SpellChoosingManager.Instance.spell2.spellID); }
+            
+            if (SpellChoosingManager.Instance.spell1.spellID > 0) {GameManager.Instance.spellID.Add(SpellChoosingManager.Instance.ConvertID(SpellChoosingManager.Instance.spell1.spellID)); }
+            if (SpellChoosingManager.Instance.spell2.spellID > 0) {GameManager.Instance.spellID.Add(SpellChoosingManager.Instance.ConvertID(SpellChoosingManager.Instance.spell2.spellID)); }
             //Debug.Log(SpellChoosingManager.Instance.spell1.spellID+" "+SpellChoosingManager.Instance.spell2.spellID);
+            GameManager.Instance.spellID.Add(specialSpellId);//添加暴击符咒
             GameManager.Instance.LoadScene(GameManager.SceneName.FightingScene);
         }
         
