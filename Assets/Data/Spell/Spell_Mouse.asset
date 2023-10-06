@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9add5e2a297afc439a30a341b1e9ddd, type: 3}
-  m_Name: Spell_Chicken
+  m_Name: Spell_Mouse
   m_EditorClassIdentifier: 
-  id: 9
-  name: "\u53EA\u56E0\u7B26\u5492"
-  description: "\u9E21\u4F60\u592A\u7F8E"
-  spellSprite: {fileID: 21300000, guid: 7b568f4a6377a8642a32831a7e117992, type: 3}
+  id: 0
+  name: "\u9F20\u7B26\u5492"
+  description: null
+  spellSprite: {fileID: 21300000, guid: b06c391d43be19f4a8dc739b0c2cef78, type: 3}
   activeSkill: {fileID: 11400000, guid: 6a73228dcdc1bf14b89d22e5c8da8d9d, type: 2}
-  passiveSkill: {fileID: 11400000, guid: de3bc0744ad0f1e45b0d1dd5f19b3183, type: 2}
+  passiveSkill: {fileID: 11400000, guid: 98c5b9c4f2b40354f996357f20933472, type: 2}

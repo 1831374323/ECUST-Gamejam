@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb69d955ddefe6047828485d88206324, type: 3}
-  m_Name: ActiveSpellSkillDog
+  m_Script: {fileID: 11500000, guid: 31e8ad50868620647a076f834bfa00e8, type: 3}
+  m_Name: ActiveSpellSkillDefault
   m_EditorClassIdentifier: 
-  m_name: "\u72D7\u7B26\u5492\u4E3B\u52A8\u6280\u80FD"
+  m_name: "\u9ED8\u8BA4\u4E3B\u52A8\u6280\u80FD"

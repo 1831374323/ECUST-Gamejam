@@ -2,10 +2,11 @@ using EcustGamejam;
 using FightingScene.UnitSystem;
 using UnityEngine;
 
-namespace FightingScene.SkillSystem.SpellSkill.Active
+namespace FightingScene.SkillSystem.SpellSkill.Passive
 {
-    [CreateAssetMenu(fileName = "ActiveSpellSkillSpecial",menuName = "ScriptableObject/Skill/SpellSkill/Active/Special",order = 2)]
-    public class ActiveSpellSkillSpecial : SkillBase
+    [CreateAssetMenu(fileName = "PassiveSpellSkillMonkey",menuName = "ScriptableObject/Skill/SpellSkill/Passive/Monkey",order = 3)]
+
+    public class PassiveSpellSkillMonkey : SkillBase
     {
         public override void SkillApply(UnitMono player,UnitMono enemy)
         {

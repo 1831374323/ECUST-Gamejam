@@ -1,11 +1,12 @@
 using EcustGamejam;
-using FightingScene.UnitSystem;
 using UnityEngine;
+using FightingScene.UnitSystem;
 
-namespace FightingScene.SkillSystem.SpellSkill.Active
+namespace FightingScene.SkillSystem.SpellSkill.Passive
 {
-    [CreateAssetMenu(fileName = "ActiveSpellSkillDog",menuName = "ScriptableObject/Skill/SpellSkill/Active/Dog",order = 1)]
-    public class ActiveSpellSkillDog : SkillBase
+    [CreateAssetMenu(fileName = "PassiveSpellSkillMouse",menuName = "ScriptableObject/Skill/SpellSkill/Passive/Mouse",order = 5)]
+
+    public class PassiveSpellSkillMouse : SkillBase
     {
         public override void SkillApply(UnitMono player,UnitMono enemy)
         {

@@ -65,9 +65,8 @@ namespace LevelChoosingScene
         {
             GameManager.Instance.level = currentLevel;
             
-            if (SpellChoosingManager.Instance.spell1.spellID > 0) {GameManager.Instance.spellID.Add(SpellChoosingManager.Instance.ConvertID(SpellChoosingManager.Instance.spell1.spellID)); }
-            if (SpellChoosingManager.Instance.spell2.spellID > 0) {GameManager.Instance.spellID.Add(SpellChoosingManager.Instance.ConvertID(SpellChoosingManager.Instance.spell2.spellID)); }
-            //Debug.Log(SpellChoosingManager.Instance.spell1.spellID+" "+SpellChoosingManager.Instance.spell2.spellID);
+            if (SpellChoosingManager.Instance.spell1.spellID >= 0) {GameManager.Instance.spellID.Add(SpellChoosingManager.Instance.ConvertID(SpellChoosingManager.Instance.spell1.spellID)); }
+            if (SpellChoosingManager.Instance.spell2.spellID >= 0) {GameManager.Instance.spellID.Add(SpellChoosingManager.Instance.ConvertID(SpellChoosingManager.Instance.spell2.spellID)); }
             GameManager.Instance.spellID.Add(specialSpellId);//添加暴击符咒
             GameManager.Instance.LoadScene(GameManager.SceneName.FightingScene);
         }
