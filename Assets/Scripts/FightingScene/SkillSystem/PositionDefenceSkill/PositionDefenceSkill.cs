@@ -15,44 +15,44 @@ namespace EcustGamejam
             {
                 if (!skillUser.SetMp(-MpCost[level]))
                 {
-                    Debug.Log("À¶Á¿²»×ã");
+                    Debug.Log("è“é‡ä¸è¶³");
                     return;
                 }
             }
 
             float defValue = GetDefValue(level);
 
-            //¿ËÖÆ¹ØÏµ
+            //å…‹åˆ¶å…³ç³»
             if (PositionManager.Instance.GetCounterRelation(skillUser, target)
                 == PositionManager.CounterRelation.Counter)
             {
-                Debug.Log("´¥·¢¿ËÖÆ");
+                Debug.Log("è§¦å‘å…‹åˆ¶");
                 defValue *= 1.2f;
             }
             else if (PositionManager.Instance.GetCounterRelation(skillUser, target)
                 == PositionManager.CounterRelation.Countered)
             {
-                Debug.Log("´¥·¢±»¿ËÖÆ");
+                Debug.Log("è§¦å‘è¢«å…‹åˆ¶");
                 defValue *= 0.8f;
             }
 
-            ////±©»÷
+            ////æš´å‡»
             //if (FightingManager.Instance.criticalState)
             //{
 
             //    if (UnityEngine.Random.Range(0, 100) <= skillUser.criticalHitRate)
             //    {
-            //        Debug.Log("´¥·¢±©»÷");
+            //        Debug.Log("è§¦å‘æš´å‡»");
             //        defValue *= skillUser.criticalStrikeRate;
 
             //    }
             //}
 
-            skillUser.shield += (int)defValue;
+            skillUser.shield += (int)(defValue * skillUser.shieldIncreaseValue);
         }
 
         /// <summary>
-        /// ·µ»ØÔì³ÉµÄÉËº¦²¢Ö´ĞĞÆäËûĞ§¹û
+        /// è¿”å›é€ æˆçš„ä¼¤å®³å¹¶æ‰§è¡Œå…¶ä»–æ•ˆæœ
         /// </summary>
         /// <param name="level"></param>
         /// <returns></returns>

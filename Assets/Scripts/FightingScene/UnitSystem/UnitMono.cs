@@ -26,6 +26,8 @@ namespace FightingScene.UnitSystem
 
         [Tooltip("人物当前增伤系数")] public float increaseValue;
         [Tooltip("人物当前减伤系数")] public float decreaseValue;
+        
+        [Tooltip("人物护盾增加系数")] public float shieldIncreaseValue;
 
         /// <summary>
         /// 设置血量函数
@@ -51,7 +53,7 @@ namespace FightingScene.UnitSystem
                 }
                 else
                 {
-                    if (shield >= x)//先扣护盾
+                    if (shield >= -x)//先扣护盾
                     {
                         shield += x;
                     }

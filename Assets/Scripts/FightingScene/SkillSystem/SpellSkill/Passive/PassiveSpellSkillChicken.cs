@@ -8,6 +8,8 @@ namespace FightingScene.SkillSystem.SpellSkill.Passive
     public class PassiveSpellSkillChicken : SkillBase
     {
         [Tooltip("敌人原先的速度")] private int m_EnemyPastSpeed;
+        [Tooltip("敌人原先的增伤系数")] private float m_DecreaseValue;
+        
         /// <summary>
         /// 降低敌人30%攻击速度（计算方式为原速度乘以0.7）并将敌人攻击力削弱为原先的0.8
         /// </summary>
@@ -20,6 +22,10 @@ namespace FightingScene.SkillSystem.SpellSkill.Passive
             enemy.speed = Mathf.RoundToInt((float)(enemy.speed * 0.7));
             //计算改变的敌人速度
             m_EnemyPastSpeed = m_EnemyPastSpeed - enemy.speed;
+
+            m_DecreaseValue = enemy.decreaseValue;
+            enemy.decreaseValue*=0.8f;
+            m_DecreaseValue = m_DecreaseValue - enemy.decreaseValue;
         }
         
         /// <summary>
@@ -32,6 +38,7 @@ namespace FightingScene.SkillSystem.SpellSkill.Passive
             Debug.Log("这是" + this.m_name + "的停止调用技能");
             //还原敌人速度
             enemy.speed += m_EnemyPastSpeed;
+            enemy.decreaseValue += m_DecreaseValue;
         }
     }
 }
