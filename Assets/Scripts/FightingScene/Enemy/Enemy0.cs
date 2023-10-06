@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace EcustGamejam
 {
+    
     public class Enemy0 : EnemyBase
     {
         protected override void SkillSection()
@@ -13,15 +14,15 @@ namespace EcustGamejam
                 case 0:
                 case 1:
                 case 2:
-                    StartCoroutine(DoSkill(myData.skillRecycle[0]));
+                    myData.skillRecycle[0].SkillApply(this, FightingManager.Instance.player);
                     break;
                 case 3:
                 case 4:
-                    StartCoroutine(DoSkill(myData.skillRecycle[1]));
+                    myData.skillRecycle[1].SkillApply(this, FightingManager.Instance.player);
                     break;
                 case 5:
                 case 6:
-                    StartCoroutine(DoSkill(myData.skillRecycle[2]));
+                    myData.skillRecycle[2].SkillApply(this, FightingManager.Instance.player);
                     break;
                 default:
                     break;

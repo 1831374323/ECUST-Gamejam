@@ -46,8 +46,15 @@ namespace EcustGamejam
             OnPlayerRoundStartAction += PlayerRoundStart;
             OnPlayerRoundEndAction += PlayerRoundEnd;
 
-            OnEnemyRoundStartAction = null;
+            
             OnEnemyRoundEndAction += EnemyRoundEnd;
+
+            Debug.Log("EcustGamejam." + GameManager.Instance.enemySO.scriptName);
+            Type type= Type.GetType("EcustGamejam."+GameManager.Instance.enemySO.scriptName);
+            Debug.Log(type.Name);
+
+            GameObject.Find("Enemy").AddComponent(type);
+            enemy = GameObject.Find("Enemy").GetComponent<UnitMono>();
 
             SpellInitial();
 
@@ -249,8 +256,8 @@ namespace EcustGamejam
             criticalState = state;
         }
 
-         public float increaseValue = 1;
-         public float decreaseValue = 1;
+        public float increaseValue = 1;
+        public float decreaseValue = 1;
 
         public void DoDamage(int _value, UnitMono target)
         {
@@ -258,7 +265,7 @@ namespace EcustGamejam
             int value = _value;
 
             isDead = !target.SetHp((int)(-value));
-            
+
             if (isDead)
             {
                 switch (target.gameObject.name)

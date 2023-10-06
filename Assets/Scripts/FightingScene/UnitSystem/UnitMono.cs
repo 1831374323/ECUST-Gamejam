@@ -7,11 +7,11 @@ namespace FightingScene.UnitSystem
         [Tooltip("人物名")] public string unitName;
 
         [Tooltip("人物最大血量")] public int maxHp;
-        [SerializeField, Tooltip("人物当前血量")] private int currentHp;
+        [SerializeField, Tooltip("人物当前血量")] protected int currentHp;
         public int CurrentHp { get { return currentHp; } }
         
         [Tooltip("人物当前蓝量")] public int maxMp;
-        [SerializeField, Tooltip("人物当前蓝量")] private int currentMp;
+        [SerializeField, Tooltip("人物当前蓝量")] protected int currentMp;
         public int CurrentMP { get { return currentMp; } }
         [Tooltip("人物蓝量恢复值")] public int cureMp;
 
@@ -28,6 +28,7 @@ namespace FightingScene.UnitSystem
         [Tooltip("人物当前减伤系数")] public float decreaseValue;
         
         [Tooltip("人物护盾增加系数")] public float shieldIncreaseValue;
+
 
         /// <summary>
         /// 设置血量函数

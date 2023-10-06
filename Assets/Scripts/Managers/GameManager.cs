@@ -11,6 +11,7 @@ namespace EcustGamejam
     {
         public List<int> spellID= new List<int>();
         public LevelScriptObject level;
+        public EnemySO enemySO;
 
         void Awake()
         {
