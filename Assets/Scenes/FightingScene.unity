@@ -2181,11 +2181,12 @@ MonoBehaviour:
   cureMp: 300
   speed: 10
   criticalHitRate: 0
-  criticalStrikeRate: 0
+  criticalStrikeRate: 1.5
   currentPosition: 7
   shield: 0
   increaseValue: 1
   decreaseValue: 1
+  shieldIncreaseValue: 1
 --- !u!1001 &632086616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4117,6 +4118,7 @@ MonoBehaviour:
   shield: 20
   increaseValue: 1
   decreaseValue: 1
+  shieldIncreaseValue: 1
   myData: {fileID: 0}
 --- !u!1 &1518078881
 GameObject:
