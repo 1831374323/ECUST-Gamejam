@@ -18,6 +18,8 @@ namespace EcustGamejam
             burningBuff.AddBuff(base.m_target);
 
             return atkValue[level];
+
+
         }
 
     }

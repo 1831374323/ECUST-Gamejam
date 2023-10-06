@@ -7,6 +7,7 @@ using FightingScene.Managers;
 using FightingScene.UnitSystem;
 using FightingScene.CoinSystem;
 using FightingScene.SpellSystem;
+using Unity.VisualScripting;
 
 namespace EcustGamejam
 {
@@ -46,14 +47,13 @@ namespace EcustGamejam
             OnPlayerRoundStartAction += PlayerRoundStart;
             OnPlayerRoundEndAction += PlayerRoundEnd;
 
-            
+
             OnEnemyRoundEndAction += EnemyRoundEnd;
 
-            Debug.Log("EcustGamejam." + GameManager.Instance.enemySO.scriptName);
-            Type type= Type.GetType("EcustGamejam."+GameManager.Instance.enemySO.scriptName);
-            Debug.Log(type.Name);
+            Type type = Type.GetType("EcustGamejam." + GameManager.Instance.enemySO.scriptName);
 
             GameObject.Find("Enemy").AddComponent(type);
+            
             enemy = GameObject.Find("Enemy").GetComponent<UnitMono>();
 
             SpellInitial();

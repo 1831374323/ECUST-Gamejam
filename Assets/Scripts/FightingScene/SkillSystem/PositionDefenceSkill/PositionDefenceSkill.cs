@@ -52,7 +52,7 @@ namespace EcustGamejam
         }
 
         /// <summary>
-        /// 返回造成的伤害并执行其他效果
+        /// 返回获得的护盾并执行其他效果
         /// </summary>
         /// <param name="level"></param>
         /// <returns></returns>

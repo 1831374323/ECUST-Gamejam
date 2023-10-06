@@ -10,8 +10,14 @@ namespace FightingScene.Managers
     {
         
         [Tooltip("符咒列表")] public List<Spells> spells ;
-        [Tooltip("敌人")] public UnitMono enemy;
+        [Tooltip("敌人")] public GameObject enemyGO;
+        private UnitMono enemy;
         [Tooltip("玩家")] public UnitMono player;
+
+        private void Start()
+        {
+            enemy=enemyGO.GetComponent<UnitMono>();
+        }
 
         /// <summary>
         /// 使这个id的符咒生效

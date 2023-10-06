@@ -664,7 +664,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dee3b5b48a00eb14492d6815bbcd1411, type: 2}
   - {fileID: 11400000, guid: a7c2262a347fc0d4fb5ea6e565c3e89a, type: 2}
   - {fileID: 11400000, guid: ddb66174a2c2f4c41bdc0ee96cce94fb, type: 2}
-  enemy: {fileID: 0}
+  enemyGO: {fileID: 1506566574}
   player: {fileID: 542887751}
 --- !u!114 &133276424
 MonoBehaviour:
