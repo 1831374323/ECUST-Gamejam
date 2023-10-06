@@ -664,7 +664,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dee3b5b48a00eb14492d6815bbcd1411, type: 2}
   - {fileID: 11400000, guid: a7c2262a347fc0d4fb5ea6e565c3e89a, type: 2}
   - {fileID: 11400000, guid: ddb66174a2c2f4c41bdc0ee96cce94fb, type: 2}
-  enemy: {fileID: 1506566576}
+  enemy: {fileID: 0}
   player: {fileID: 542887751}
 --- !u!114 &133276424
 MonoBehaviour:
@@ -754,7 +754,7 @@ MonoBehaviour:
   enterFightButton: {fileID: 1387993485}
   tempMp: 4
   player: {fileID: 542887751}
-  enemy: {fileID: 1506566576}
+  enemy: {fileID: 0}
 --- !u!4 &133276428
 Transform:
   m_ObjectHideFlags: 0
@@ -787,7 +787,7 @@ MonoBehaviour:
   isFirstRound: 1
   criticalState: 0
   player: {fileID: 542887751}
-  enemy: {fileID: 1506566576}
+  enemy: {fileID: 0}
   m_spells: []
   increaseValue: 1
   decreaseValue: 1
@@ -4101,7 +4101,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1506566574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99aa45c0e63b57444a7422586ba043c4, type: 3}
+  m_Script: {fileID: 11500000, guid: b6fcdb36c274b9a41b0e0fbcca99b4ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Enemy
@@ -4117,6 +4117,7 @@ MonoBehaviour:
   shield: 20
   increaseValue: 1
   decreaseValue: 1
+  myData: {fileID: 0}
 --- !u!1 &1518078881
 GameObject:
   m_ObjectHideFlags: 0
