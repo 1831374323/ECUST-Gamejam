@@ -4,6 +4,8 @@ using FightingScene.SpellSystem;
 using UnityEngine;
 using UnityEngine.UI;
 using Frame.Core;
+using Managers;
+
 namespace LevelChoosingScene
 {
     public class SpellChoosingManager : SingletonBase<SpellChoosingManager>
@@ -26,7 +28,12 @@ namespace LevelChoosingScene
                 spellChoosingObjects[i].spellName.text = spells[i].name;
                 spellChoosingObjects[i].spellID = spells[i].id;
                 int tmp = i;
-                spellChoosingObjects[i].spellButton.onClick.AddListener(() => { ChooseSpell(tmp);});
+                spellChoosingObjects[i].spellButton.onClick.AddListener(() =>
+                {
+                    ChooseSpell(tmp);
+                    AudioManager.instance.PlaySound(1);//添加音效
+                });
+
             }
         }
 
@@ -35,6 +42,7 @@ namespace LevelChoosingScene
         /// </summary>
         public void SpellChooseUI1()
         {
+            AudioManager.instance.PlaySound(2);//添加音效
             spellUI.SetActive(!spellUI.activeSelf);
             for (int i = 0; i < spells.Count; i++)
             {
@@ -47,6 +55,7 @@ namespace LevelChoosingScene
         /// </summary>
         public void SpellChooseUI2()
         {
+            AudioManager.instance.PlaySound(2);//添加音效
             spellUI.SetActive(!spellUI.activeSelf);
             for (int i = 0; i < spells.Count; i++)
             {
@@ -60,6 +69,7 @@ namespace LevelChoosingScene
         /// </summary>
         public void SpellChooseUI()
         {
+            AudioManager.instance.PlaySound(1);//添加音效
             spellUI.SetActive(!spellUI.activeSelf);
         }
         

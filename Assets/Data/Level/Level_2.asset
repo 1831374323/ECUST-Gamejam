@@ -15,4 +15,4 @@ MonoBehaviour:
   levelId: 1
   description: "\u5173\u5361\u4FE1\u606F\uFF1A\u7B2C\u4E8C\u5173"
   enemyDescription: "\u654C\u4EBA\u4FE1\u606F\uFF1A\u7B2C\u4E8C\u5173\u7684\u654C\u4EBA"
-  enemySprite: {fileID: 21300000, guid: bdf0c12e393079b48beaa7d02d249e2f, type: 3}
+  enemy: {fileID: 11400000, guid: 6e64013555b277e4bb4bc23ceae74395, type: 2}
