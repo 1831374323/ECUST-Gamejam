@@ -3,6 +3,7 @@ using EcustGamejam;
 using UnityEngine;
 using UnityEngine.UI;
 using Frame.Core;
+using Managers;
 
 namespace LevelChoosingScene
 {
@@ -21,13 +22,15 @@ namespace LevelChoosingScene
         private void Start()
         {
             GameManager.Instance.spellID.Clear();//重置符咒位
+            GameManager.Instance.level = null;//重置传入关卡
+            GameManager.Instance.enemySO = null;//重置敌人SO
             
-            for (int i = 0; i < levels.Count; i++)//给按钮绑定事件
+            for (int i = 0; i < levels.Count; i++)//给按钮绑定事件,附加音效
             {
                 if (levelButtons[i] != null)
                 {
                     int tmp = i;
-                    levelButtons[i].onClick.AddListener(() => { SetLevel(tmp); });
+                    levelButtons[i].onClick.AddListener(() => { SetLevel(tmp); AudioManager.instance.PlaySound(0);});
                     if (i > PlayerPrefs.GetInt("MaxtLevelID", 9)) 
                     {
                         levelButtons[i].interactable = false;
@@ -53,9 +56,8 @@ namespace LevelChoosingScene
         {
             levelInfoText.text = levels[id].description;
             enemyInfoText.text = levels[id].enemyDescription;
-            enemyImage.sprite = levels[id].enemySprite;
+            if(levels[id].enemy!=null) {enemyImage.sprite = levels[id].enemy.image;}
             currentLevel = levels[id];
-            
         }
 
         /// <summary>
@@ -63,8 +65,10 @@ namespace LevelChoosingScene
         /// </summary>
         public void SendLevelInfo()
         {
-            GameManager.Instance.level = currentLevel;
-            
+            AudioManager.instance.PlaySound(0);//给按钮添加音效
+            if (currentLevel != null){GameManager.Instance.level = currentLevel; } //提交关卡SO
+            if(currentLevel.enemy!=null){GameManager.Instance.enemySO = currentLevel.enemy;}//提交敌人SO
+
             if (SpellChoosingManager.Instance.spell1.spellID >= 0) {GameManager.Instance.spellID.Add(SpellChoosingManager.Instance.ConvertID(SpellChoosingManager.Instance.spell1.spellID)); }
             if (SpellChoosingManager.Instance.spell2.spellID >= 0) {GameManager.Instance.spellID.Add(SpellChoosingManager.Instance.ConvertID(SpellChoosingManager.Instance.spell2.spellID)); }
             GameManager.Instance.spellID.Add(specialSpellId);//添加暴击符咒
@@ -76,6 +80,7 @@ namespace LevelChoosingScene
         /// </summary>
         public void Exist()
         {
+            AudioManager.instance.PlaySound(0);//给按钮添加音效
             GameManager.Instance.LoadScene(GameManager.SceneName.StartScene);
         }
         
