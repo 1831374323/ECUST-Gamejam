@@ -6,6 +6,10 @@ namespace EcustGamejam
 {
     public abstract class PositionDefenceSkill : PositionSkill
     {
+        //技能释放者
+        protected UnitMono m_skillUser;
+        //非技能释放者，而非技能目标
+        protected UnitMono m_target;
         public override void SkillApply(UnitMono skillUser, UnitMono target, int level)
         {
 
