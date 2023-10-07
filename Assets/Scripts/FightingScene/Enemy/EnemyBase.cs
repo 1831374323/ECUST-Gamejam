@@ -52,7 +52,7 @@ namespace EcustGamejam
         {
             coinResult = UnityEngine.Random.Range(0, 7);
             currentPosition = (currentPosition + coinResult) % 8;
-
+            FightingUIManager.Instance.UpdateEnemyPosition();
         }
         protected virtual void SkillSection()
         {

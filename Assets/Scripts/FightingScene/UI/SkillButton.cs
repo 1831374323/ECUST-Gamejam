@@ -12,6 +12,7 @@ namespace EcustGamejam
         public int level;
         private UnitMono player;
         private UnitMono enemy;
+        public Text describeText;
 
         private void Start()
         {
@@ -21,23 +22,48 @@ namespace EcustGamejam
 
         public void OnAtkClick()
         {
-            if (PositionManager.Instance.positions[player.currentPosition].
-                    Attackskill!=null)
+            if (FightingManager.Instance.m_roundState == FightingManager.RoundState.PlayerRound ||
+                FightingManager.Instance.m_roundState == FightingManager.RoundState.PlayerRound2)
             {
-                PositionManager.Instance.positions[player.currentPosition].
-                    Attackskill.SkillApply(player, enemy, level);
+                if (PositionManager.Instance.positions[player.currentPosition].
+                        attackskill != null)
+                {
+                    PositionManager.Instance.positions[player.currentPosition].
+                        attackskill.SkillApply(player, enemy, level);
+                }
             }
-            
+
         }
 
         public void OnDefenceClick()
         {
-            if (PositionManager.Instance.positions[player.currentPosition].
-                   defenceSkill != null)
+            if (FightingManager.Instance.m_roundState == FightingManager.RoundState.PlayerRound ||
+                FightingManager.Instance.m_roundState == FightingManager.RoundState.PlayerRound2)
             {
-                PositionManager.Instance.positions[player.currentPosition].
-                    defenceSkill.SkillApply(player, enemy, level);
+                if (PositionManager.Instance.positions[player.currentPosition].
+                   defenceSkill != null)
+                {
+                    PositionManager.Instance.positions[player.currentPosition].
+                        defenceSkill.SkillApply(player, enemy, level);
+                }
             }
+        }
+
+        public void OnPointerEnterAtk()
+        {
+            describeText.gameObject.SetActive(true);
+            describeText.text = PositionManager.Instance.positions[player.currentPosition].attackskill.describe;
+        }
+
+        public void OnPointerEnterDef()
+        {
+            describeText.gameObject.SetActive(true);
+            describeText.text = PositionManager.Instance.positions[player.currentPosition].defenceSkill.describe;
+        }
+
+        public void OnPointerExit()
+        {
+            describeText.gameObject.SetActive(false);
         }
     }
 }

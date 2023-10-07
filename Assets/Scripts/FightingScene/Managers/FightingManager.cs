@@ -8,6 +8,7 @@ using FightingScene.UnitSystem;
 using FightingScene.CoinSystem;
 using FightingScene.SpellSystem;
 using Unity.VisualScripting;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace EcustGamejam
 {
@@ -16,10 +17,12 @@ namespace EcustGamejam
 
         [SerializeField]
         private RoundState roundState = RoundState.CoinRound;
+        public RoundState m_roundState { get { return roundState; } }
         [SerializeField]
         private List<RoundState> nextStates = new List<RoundState>();
         public bool isFirstRound = true;
         private bool isRoundOver = false;
+
         public bool criticalState = false;
 
         public UnitMono player;
@@ -53,7 +56,7 @@ namespace EcustGamejam
             Type type = Type.GetType("EcustGamejam." + GameManager.Instance.enemySO.scriptName);
 
             GameObject.Find("Enemy").AddComponent(type);
-            
+
             enemy = GameObject.Find("Enemy").GetComponent<UnitMono>();
 
             SpellInitial();

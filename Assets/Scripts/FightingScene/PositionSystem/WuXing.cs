@@ -11,6 +11,7 @@ namespace EcustGamejam
         public string m_name;
         public int counterID;
         public int counteredID;
-
+        public string counterName;
+        public string counteredName;
     }
 }

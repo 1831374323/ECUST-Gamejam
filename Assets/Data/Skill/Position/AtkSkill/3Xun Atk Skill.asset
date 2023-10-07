@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 3Xun Atk Skill
   m_EditorClassIdentifier: 
   m_name: 
+  describe: "\u987A\u98CE\u62C2\u6728\uFF1A \u4F24\u5BB310/15/25 \u670930/45/60%\u6982\u7387\u4E0B\u56DE\u5408\u989D\u5916\u56DE\u590D30\u771F\u6C14\u503C"
   MpCost: 140000001e00000032000000
   atkValue: 0a0000000f00000019000000
   getMpBuffSO: {fileID: 11400000, guid: 6c9406668f14ffb4084e211d1c1ab3e1, type: 2}

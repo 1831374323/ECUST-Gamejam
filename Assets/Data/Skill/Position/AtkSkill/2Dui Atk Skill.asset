@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 2Dui Atk Skill
   m_EditorClassIdentifier: 
   m_name: 
+  describe: "5/10/20 \u9020\u6210\u654C\u4EBA\u672C\u56DE\u5408\u653B\u51FB\u529B\u4E0B\u964D10%/15%/25%"
   MpCost: 140000001e00000032000000
   atkValue: 050000000a00000014000000
   damageReduceBuffSO: {fileID: 11400000, guid: ff5da339f4cfac147bcca3e4dce89b51, type: 2}
