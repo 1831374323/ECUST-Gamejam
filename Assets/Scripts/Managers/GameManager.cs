@@ -61,14 +61,14 @@ namespace EcustGamejam
         public void LevelVectory()
         {
             FightingUIManager.Instance.levelOver.SetActive(true);
-            FightingUIManager.Instance.levelOver.transform.Find("Text").GetComponent<Text>().text = "ÓÎÏ·Ê¤Àû";
+            FightingUIManager.Instance.levelOver.transform.Find("Text").GetComponent<Text>().text = "ï¿½ï¿½Ï·Ê¤ï¿½ï¿½";
             PlayerPrefs.SetInt("MaxLevelID", level.levelId);
         }
 
         public void LevelDefeat()
         {
             FightingUIManager.Instance.levelOver.SetActive(true);
-            FightingUIManager.Instance.levelOver.transform.Find("Text").GetComponent<Text>().text = "ÓÎÏ·Ê§°Ü";
+            FightingUIManager.Instance.levelOver.transform.Find("Text").GetComponent<Text>().text = "ï¿½ï¿½Ï·Ê§ï¿½ï¿½";
         }
 
     }
