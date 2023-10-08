@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: 6Gen Def Skill
   m_EditorClassIdentifier: 
   m_name: 
+  describe: "\u9ED8\u8BA4"
   MpCost: 140000001e00000032000000
   defValue: 0f000000140000001e000000

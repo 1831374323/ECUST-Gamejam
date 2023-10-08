@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Position_7
   m_EditorClassIdentifier: 
   id: 7
-  m_name: 
+  m_name: "\u5764"
   color: 
-  Attackskill: {fileID: 11400000, guid: 12af5f49c5834fd448919f5112eef390, type: 2}
+  attackskill: {fileID: 11400000, guid: 12af5f49c5834fd448919f5112eef390, type: 2}
   defenceSkill: {fileID: 11400000, guid: 508c052ec5d9c5646bc1c4f6122fcf59, type: 2}
   wuXing: {fileID: 11400000, guid: cf610636d6720894c9247bad7c2f4f12, type: 2}

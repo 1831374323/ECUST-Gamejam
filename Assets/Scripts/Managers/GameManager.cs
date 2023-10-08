@@ -13,8 +13,9 @@ namespace EcustGamejam
         public LevelScriptObject level;
         public EnemySO enemySO;
 
-        void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             DontDestroyOnLoad(this.gameObject);
         }
         void Start()

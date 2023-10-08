@@ -16,3 +16,5 @@ MonoBehaviour:
   m_name: "\u91D1"
   counterID: 1
   counteredID: 3
+  counterName: "\u6728"
+  counteredName: "\u706B"

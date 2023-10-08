@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: 7Kun Atk Skill
   m_EditorClassIdentifier: 
   m_name: 
+  describe: "\u5927\u5730\u88C2\u75D5 \u9020\u621010/15/25\u70B9\u4F24\u5BB3 \u5BF9\u654C\u4EBA\u7684\u62A4\u76FE\u989D\u5916\u4EA7\u751F50%\u7684\u7834\u574F\u4F24\u5BB3"
   MpCost: 140000001e00000032000000
   atkValue: 0a0000000f00000019000000

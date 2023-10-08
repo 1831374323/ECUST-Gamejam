@@ -6,6 +6,7 @@ namespace EcustGamejam
 {
     public abstract class PositionAtkSkill : PositionSkill
     {
+        
         protected UnitMono m_skillUser;
         protected UnitMono m_target;
         public override void SkillApply(UnitMono skillUser, UnitMono target, int level)

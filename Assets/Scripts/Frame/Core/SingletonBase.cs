@@ -7,6 +7,18 @@ namespace Frame.Core
         private static T m_instance;
         private static object m_instanceLock = new object();
 
+        protected virtual void Awake()
+        {
+            if (m_instance == null)
+            {
+                m_instance = this as T;
+            }
+            else if (m_instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+
         public static T Instance
         {
             get
@@ -34,7 +46,7 @@ namespace Frame.Core
                             DontDestroyOnLoad(singleton);
                         }
                     }
-                    
+
 
                     return m_instance;
                 }
