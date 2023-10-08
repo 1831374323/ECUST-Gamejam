@@ -59,7 +59,7 @@ namespace EcustGamejam
         
         public void LevelVectory()
         {
-            PlayerPrefs.SetInt("MaxtLevelID", level.levelId);
+            PlayerPrefs.SetInt("MaxLevelID", level.levelId);
         }
     }
 }
