@@ -18,5 +18,11 @@ namespace StartScene
             AudioManager.instance.PlaySound(0);
             GameManager.Instance.LoadScene(GameManager.SceneName.LevelScene);
         }
+
+        public void NewEnterGame()
+        {
+            PlayerPrefs.DeleteAll();
+            EnterGame();
+        }
     }
 }

@@ -140,5 +140,12 @@ namespace EcustGamejam
         }
 
         public GameObject levelOver;
+
+        public Text behaviourText;
+
+        public void UpDateBehaviourText(string text)
+        {
+            behaviourText.text = text;
+        }
     }
 }

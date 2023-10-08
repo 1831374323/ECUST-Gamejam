@@ -9,7 +9,7 @@ namespace EcustGamejam
     {
         public string m_name;
         public string description;
-        public List<SkillBase> skillRecycle;
+        public List<EnemySkillBase> skillRecycle;
         public int maxHp;
         public int speed;
         public int shield;

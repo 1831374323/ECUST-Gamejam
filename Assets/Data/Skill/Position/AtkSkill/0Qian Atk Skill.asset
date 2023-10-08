@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4a62d19e4a8004a9f84115a61741d4, type: 3}
   m_Name: 0Qian Atk Skill
   m_EditorClassIdentifier: 
-  m_name: 
+  m_name: "\u5F00\u4E7E\u8F9F\u5730"
   describe: "\u5F00\u4E7E\u8F9F\u5730\uFF1A \u9020\u621020/30/45\u70B9\u4F24\u5BB3"
   MpCost: 140000001e00000032000000
   atkValue: 140000001e0000002d000000

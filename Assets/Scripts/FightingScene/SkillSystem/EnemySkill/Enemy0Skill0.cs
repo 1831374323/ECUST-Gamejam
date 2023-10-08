@@ -6,7 +6,7 @@ using UnityEngine;
 namespace EcustGamejam
 {
     [CreateAssetMenu(menuName = "MyData/Skill/Enemy/Enemy0")]
-    public class Enemy0Skill0 : SkillBase
+    public class Enemy0Skill0 : EnemySkillBase
     {
         public int damageVakue;
         public int shieldValue;

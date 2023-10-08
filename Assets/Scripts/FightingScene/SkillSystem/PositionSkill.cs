@@ -10,6 +10,7 @@ namespace EcustGamejam
 
         public string m_name;
         public string describe;
+
         public List<int> MpCost = new List<int>();
 
         /// <summary>

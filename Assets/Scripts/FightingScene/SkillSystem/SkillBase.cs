@@ -11,7 +11,7 @@ namespace EcustGamejam
         public string m_name;
         public virtual void SkillApply(UnitMono skillUser,UnitMono target)
         {
-
+            
         }
 
         public virtual void SkillDisable(UnitMono skillUser, UnitMono target)

@@ -24,6 +24,7 @@ namespace LevelChoosingScene
             GameManager.Instance.spellID.Clear();//重置符咒位
             GameManager.Instance.level = null;//重置传入关卡
             GameManager.Instance.enemySO = null;//重置敌人SO
+
             
             for (int i = 0; i < levels.Count; i++)//给按钮绑定事件,附加音效
             {
@@ -31,7 +32,7 @@ namespace LevelChoosingScene
                 {
                     int tmp = i;
                     levelButtons[i].onClick.AddListener(() => { SetLevel(tmp); AudioManager.instance.PlaySound(0);});
-                    if (i > PlayerPrefs.GetInt("MaxtLevelID", 9)) 
+                    if (i > PlayerPrefs.GetInt("MaxLevelID", 0)) 
                     {
                         levelButtons[i].interactable = false;
                     }
