@@ -274,11 +274,11 @@ namespace EcustGamejam
                 switch (target.gameObject.name)
                 {
                     case "Enemy":
-                        Debug.Log("游戏胜利");
+                        GameManager.Instance.LevelVectory();
                         break;
 
                     case "Player":
-                        Debug.Log("游戏失败");
+                        GameManager.Instance.LevelDefeat();
                         break;
                 }
             }

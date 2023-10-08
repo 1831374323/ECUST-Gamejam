@@ -4,6 +4,7 @@ using Frame.Core;
 using LevelChoosingScene;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace EcustGamejam
 {
@@ -59,7 +60,16 @@ namespace EcustGamejam
         
         public void LevelVectory()
         {
-            PlayerPrefs.SetInt("MaxtLevelID", level.levelId);
+            FightingUIManager.Instance.levelOver.SetActive(true);
+            FightingUIManager.Instance.levelOver.transform.Find("Text").GetComponent<Text>().text = "”Œœ∑ §¿˚";
+            PlayerPrefs.SetInt("MaxLevelID", level.levelId);
         }
+
+        public void LevelDefeat()
+        {
+            FightingUIManager.Instance.levelOver.SetActive(true);
+            FightingUIManager.Instance.levelOver.transform.Find("Text").GetComponent<Text>().text = "”Œœ∑ ß∞‹";
+        }
+
     }
 }

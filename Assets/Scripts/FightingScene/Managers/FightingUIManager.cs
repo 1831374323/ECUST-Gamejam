@@ -113,5 +113,32 @@ namespace EcustGamejam
             enemyPosition.transform.position =
                 outerButtons[FightingManager.Instance.enemy.currentPosition].transform.position;
         }
+
+        public Text hpText;
+        public Text mpText;
+
+        public void ShowHpText()
+        {
+            hpText.gameObject.SetActive(true);
+            hpText.text = FightingManager.Instance.player.CurrentHp + "/" + FightingManager.Instance.player.maxHp;
+        }
+
+        public void HideHpText()
+        {
+            hpText.gameObject.SetActive(false);
+        }
+
+        public void ShowMpText()
+        {
+            mpText.gameObject.SetActive(true);
+            mpText.text = FightingManager.Instance.player.CurrentMP + "/" + FightingManager.Instance.player.maxMp;
+        }
+
+        public void HideMpText()
+        {
+            mpText.gameObject.SetActive(false);
+        }
+
+        public GameObject levelOver;
     }
 }
