@@ -6,10 +6,14 @@ namespace EcustGamejam
 {
     public abstract class PositionDefenceSkill : PositionSkill
     {
+        protected UnitMono m_skillUser;
+        protected UnitMono m_target;
         public override void SkillApply(UnitMono skillUser, UnitMono target, int level)
         {
 
             base.SkillApply(skillUser, target, level);
+            m_skillUser = skillUser;
+            m_target = target;
 
             if (MpCost.Count > level)
             {

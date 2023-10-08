@@ -3,7 +3,8 @@ guid: 1b50108ee42fc4e40ad7571d839d6c94
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - paralysisBuffSO: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
