@@ -50,7 +50,7 @@ namespace FightingScene.UnitSystem
             }
             else//扣血
             {
-                if (currentHp + shield + x < 0)//先判断血量够不够
+                if (currentHp + shield + x <= 0)//先判断血量够不够
                 {
                     return false;
                 }

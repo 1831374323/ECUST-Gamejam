@@ -53,6 +53,7 @@ namespace EcustGamejam
             coinResult = UnityEngine.Random.Range(0, 7);
             currentPosition = (currentPosition + coinResult) % 8;
             FightingUIManager.Instance.UpdateEnemyPosition();
+            FightingUIManager.Instance.UpDateBehaviourText($"敌人骰出了{coinResult}点");
         }
         protected virtual void SkillSection()
         {
