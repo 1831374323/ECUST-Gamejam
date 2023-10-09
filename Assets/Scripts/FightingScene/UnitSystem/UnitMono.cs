@@ -1,3 +1,4 @@
+using EcustGamejam;
 using UnityEngine;
 
 namespace FightingScene.UnitSystem
@@ -37,14 +38,15 @@ namespace FightingScene.UnitSystem
         /// <returns>返回false就是没血死掉了，true就是成功设置</returns>
         public bool SetHp(int x)
         {
-            Debug.Log($"增伤系数：{increaseValue}  减伤系数：{decreaseValue} 造成伤害：{(int)(-x * increaseValue * decreaseValue)}");
+            FightingUIManager.Instance.UpDateBehaviourText($"造成伤害：{(int)(-x * increaseValue * decreaseValue)}");
+            //Debug.Log($"增伤系数：{increaseValue}  减伤系数：{decreaseValue} 造成伤害：{(int)(-x * increaseValue * decreaseValue)}");
             x = (int)(x * increaseValue * decreaseValue);
 
             if (x >= 0)//回血
             {
                 currentHp += x;
                 currentHp = (currentHp < maxHp) ? currentHp : maxHp;//防止治疗血量溢出
-                Debug.Log("回血" + x);
+                FightingUIManager.Instance.UpDateBehaviourText(this.name+"恢复生命"+x+"点");
             }
             else//扣血
             {
@@ -64,7 +66,7 @@ namespace FightingScene.UnitSystem
                         shield = 0;
                     }
                 }
-                Debug.Log("扣血" + x);
+                FightingUIManager.Instance.UpDateBehaviourText(this.name+"失去"+(-x)+"点生命,剩余"+this.GetComponent<UnitMono>().currentHp+"点");
             }
             return true;
         }
@@ -82,6 +84,7 @@ namespace FightingScene.UnitSystem
             }
             currentMp += x;
             currentMp = (currentMp < maxMp) ? currentMp : maxMp;//防止回蓝溢出
+            FightingUIManager.Instance.UpDateBehaviourText(this.name+"蓝量变动"+x+"点,剩余"+this.GetComponent<UnitMono>().currentMp+"点");
             return true;
         }
         

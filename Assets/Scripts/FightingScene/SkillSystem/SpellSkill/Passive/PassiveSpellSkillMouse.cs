@@ -12,7 +12,7 @@ namespace FightingScene.SkillSystem.SpellSkill.Passive
         private int m_PastSpeed;
         public override void SkillApply(UnitMono player,UnitMono enemy)
         {
-            Debug.Log("这是" + this.m_name + "的调用技能：本回合回复已损失生命值的一半");
+            FightingUIManager.Instance.UpDateBehaviourText(this.m_name + "的技能触发：本回合回复已损失生命值的一半");
             m_PastSpeed = player.speed;
             player.speed *= 2;
             m_PastSpeed -= player.speed;
@@ -22,7 +22,7 @@ namespace FightingScene.SkillSystem.SpellSkill.Passive
         }
         public override void SkillDisable(UnitMono player,UnitMono enemy)
         {
-            Debug.Log("这是" + this.m_name + "的停止调用技能：");
+            FightingUIManager.Instance.UpDateBehaviourText(this.m_name + "的技能停止");
             player.speed += m_PastSpeed;
         }
     }

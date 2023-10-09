@@ -14,5 +14,6 @@
     <file url="file://$PROJECT_DIR$/Assets/Scripts/FightingScene/SkillSystem/PositionDefenceSkill/DuiDefSkill.cs" charset="GBK" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/FightingScene/SkillSystem/PositionDefenceSkill/GenDefSkill.cs" charset="GBK" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Frame/Core/SingletonBase.cs" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
   </component>
 </project>

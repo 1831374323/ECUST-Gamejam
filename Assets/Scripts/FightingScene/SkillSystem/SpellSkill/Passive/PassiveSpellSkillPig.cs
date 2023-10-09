@@ -10,12 +10,12 @@ namespace FightingScene.SkillSystem.SpellSkill.Passive
     {
         public override void SkillApply(UnitMono player,UnitMono enemy)
         {
-            Debug.Log("这是" + this.m_name + "的调用技能：技能释放前生效 ，即优先级高于双方技能释放，先回复生命双方再释放技能");
+            FightingUIManager.Instance.UpDateBehaviourText(this.m_name + "的技能触发：立即回复十点生命");
             player.SetHp(10);
         }
         public override void SkillDisable(UnitMono player,UnitMono enemy)
         {
-            Debug.Log("这是" + this.m_name + "的停止调用技能：");
+            FightingUIManager.Instance.UpDateBehaviourText(this.m_name + "的技能停止");
         }
     }
 }

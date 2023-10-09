@@ -9,12 +9,12 @@ namespace FightingScene.SkillSystem.SpellSkill.Passive
     {
         public override void SkillApply(UnitMono player,UnitMono enemy)
         {
-            Debug.Log("这是" + this.m_name + "的调用技能：允许暴击");
+            FightingUIManager.Instance.UpDateBehaviourText("特殊效果触发，本次攻击可能触发暴击效果");
             FightingManager.Instance.ChangeCriticalState(true);
         }
         public override void SkillDisable(UnitMono player,UnitMono enemy)
         {
-            Debug.Log("这是" + this.m_name + "的停止调用技能：禁止暴击");
+            FightingUIManager.Instance.UpDateBehaviourText("暴击停止");
             FightingManager.Instance.ChangeCriticalState(false);
         }
     }

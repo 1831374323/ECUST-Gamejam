@@ -10,14 +10,14 @@ namespace FightingScene.SkillSystem.SpellSkill.Passive
         private float m_PastIncreaseValue;
         public override void SkillApply(UnitMono player,UnitMono enemy)
         {
-            Debug.Log("这是" + this.m_name + "的调用技能：本回合的攻击将产生额外的百分之20伤害");
+            FightingUIManager.Instance.UpDateBehaviourText(this.m_name + "的技能触发：本回合的攻击将产生额外的百分之20伤害");
             m_PastIncreaseValue = player.increaseValue;
             player.increaseValue *= 1.2f;
             m_PastIncreaseValue -= player.increaseValue;
         }
         public override void SkillDisable(UnitMono player,UnitMono enemy)
         {
-            Debug.Log("这是" + this.m_name + "的停止调用技能：");
+            FightingUIManager.Instance.UpDateBehaviourText(this.m_name + "的技能停止");
             player.increaseValue += m_PastIncreaseValue;
         }
         
