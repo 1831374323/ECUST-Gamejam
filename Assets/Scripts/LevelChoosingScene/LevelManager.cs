@@ -56,7 +56,7 @@ namespace LevelChoosingScene
         public void SetLevel(int id)
         {
             levelInfoText.text = levels[id].description;
-            enemyInfoText.text = levels[id].enemyDescription;
+            enemyInfoText.text = levels[id].enemy.description;
             if(levels[id].enemy!=null) {enemyImage.sprite = levels[id].enemy.image;}
             currentLevel = levels[id];
         }
