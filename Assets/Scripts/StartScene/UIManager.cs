@@ -33,5 +33,17 @@ namespace StartScene
         {
             makerUI.SetActive(!makerUI.activeSelf);
         }
+        
+        /// <summary>
+        /// 退出游戏
+        /// </summary>
+        public void OnExitGame()
+        {
+            #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+            #else
+                Application.Quit();
+            #endif
+        }
     }
 }

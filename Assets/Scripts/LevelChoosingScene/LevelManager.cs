@@ -57,7 +57,7 @@ namespace LevelChoosingScene
         {
             levelInfoText.text = levels[id].description;
             enemyInfoText.text = levels[id].enemy.description;
-            if(levels[id].enemy!=null) {enemyImage.sprite = levels[id].enemy.image;}
+            if(levels[id].enemy!=null) {enemyImage.sprite = levels[id].enemy.headImage;}
             currentLevel = levels[id];
         }
 

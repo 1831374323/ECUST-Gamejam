@@ -14,6 +14,7 @@ namespace EcustGamejam
         public int speed;
         public int shield;
         public Sprite image;
+        public Sprite headImage;
         public string scriptName;
     }
 }
