@@ -35,7 +35,7 @@ namespace EcustGamejam
         {
 
             StartCoroutine(EnemyRound());
-            
+
         }
 
         IEnumerator EnemyRound()
@@ -61,13 +61,19 @@ namespace EcustGamejam
             {
                 currentSkillIndex = 0;
             }
-            myData.skillRecycle[currentSkillIndex].SkillApply(this, FightingManager.Instance.player);
+
+            if (currentPosition == myData.buffPosition.id)
+            {
+                //触发额外效果
+            }
+            else
+            {
+
+                myData.skillRecycle[currentSkillIndex].SkillApply(this, FightingManager.Instance.player);
+            }
 
             currentSkillIndex++;
         }
-
-
-
 
     }
 }

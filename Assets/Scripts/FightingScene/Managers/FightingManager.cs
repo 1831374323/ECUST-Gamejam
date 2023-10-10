@@ -212,12 +212,22 @@ namespace EcustGamejam
             OnPlayerRoundStartAction?.Invoke();
         }
 
+        public GameObject playerRoundStartEffect;
         private void PlayerRoundStart()
         {
             if (roundState == RoundState.PlayerRound2)
             {
                 player.SetMp(player.cureMp / 2);
             }
+            StartCoroutine(PlayerRoundStartEffect());
+
+        }
+
+        IEnumerator PlayerRoundStartEffect()
+        {
+            playerRoundStartEffect.SetActive(true);
+            yield return new WaitForSeconds(2);
+            playerRoundStartEffect.SetActive(false);
         }
 
         public void OnPlayerRoundEnd()
@@ -235,14 +245,24 @@ namespace EcustGamejam
 
         #region -------------EnemyRound-------------
 
+        public GameObject enemyRoundStartEffect;
+
         public void OnEnemyRoundStart()
         {
             OnEnemyRoundStartAction?.Invoke();
+            StartCoroutine(EnemyRoundStartEffect());
         }
 
         public void OnEnemyRoundEnd()
         {
             OnEnemyRoundEndAction?.Invoke();
+        }
+
+        IEnumerator EnemyRoundStartEffect()
+        {
+            enemyRoundStartEffect.SetActive(true);
+            yield return new WaitForSeconds(2);
+            enemyRoundStartEffect.SetActive(false);
         }
 
 

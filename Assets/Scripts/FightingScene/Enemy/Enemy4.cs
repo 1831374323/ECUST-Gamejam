@@ -5,7 +5,7 @@ using UnityEngine;
 namespace EcustGamejam
 {
 
-    public class Enemy0 : EnemyBase
+    public class Enemy4 : EnemyBase
     {
         protected override void SkillSection()
         {
@@ -51,8 +51,6 @@ namespace EcustGamejam
                         break;
                 }
             }
-
-
         }
 
     }

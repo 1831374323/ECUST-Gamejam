@@ -16,5 +16,6 @@ namespace EcustGamejam
         public Sprite image;
         public Sprite headImage;
         public string scriptName;
+        public Position buffPosition;
     }
 }

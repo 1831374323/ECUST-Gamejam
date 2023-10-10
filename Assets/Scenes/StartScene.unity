@@ -1305,7 +1305,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7A0B\u5E8F\uFF1A\n\u7F8E\u672F\uFF1A\n\u7B56\u5212\uFF1A\n\u7279\u522B\u9E23\u8C22\uFF1A\u6218\u6597\u573A\u666FBGM
+  m_Text: "\u7A0B\u5E8F\uFF1A\u9648\u601D\u5C27 \u738B\u552F\u4F73 \u5F90\u660A\u535A\n\u7F8E\u672F\uFF1A\u7AE0\u8D8A\n\u7B56\u5212\uFF1A\u8463\u5B50\u9E23
+    \u5434\u60DF\u6BC5\n\u7279\u522B\u9E23\u8C22\uFF1A\u6218\u6597\u573A\u666FBGM
     B\u7AD9UP\u4E3Bk545\u4E36\nBGM\u5730\u5740\uFF1Ahttps://www.bilibili.com/video/BV15m4y1G7qT/?spm_id_from=333.999.0.0"
 --- !u!222 &1100434170
 CanvasRenderer:

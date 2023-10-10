@@ -13,6 +13,11 @@ namespace EcustGamejam
             FightingUIManager.Instance.UpDateBehaviourText($"敌人释放了{m_name}");
         }
 
+        public virtual void SkillBuffedApply(UnitMono skillUser, UnitMono target)
+        {
+            FightingUIManager.Instance.UpDateBehaviourText($"敌人处在强化卦位，释放了{m_name}，效果翻倍！！！");
+        }
+
         public virtual void SkillDisable(UnitMono skillUser, UnitMono target)
         {
 

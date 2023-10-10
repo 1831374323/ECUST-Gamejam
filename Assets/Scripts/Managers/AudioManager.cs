@@ -64,5 +64,11 @@ namespace Managers
             if (id < sfxs.Count){sfxs[id].pitch = Random.Range(k_PitchMin, k_PitchMax);}
             PlaySound(id);
         }
+
+        private void Start()
+        {
+            InitMusicSld();
+            InitSoundSld();
+        }
     }
 }
