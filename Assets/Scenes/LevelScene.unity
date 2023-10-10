@@ -5044,10 +5044,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1773999504914034211, guid: 84da9235b41962240883a2892c678413, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773999504914034211, guid: 84da9235b41962240883a2892c678413, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -6039299056713123328, guid: f9e1228ff6a694641af8f8251c20a4e9, type: 2}
     - target: {fileID: 2373517460802958544, guid: 84da9235b41962240883a2892c678413, type: 3}
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3109297227419070124, guid: 84da9235b41962240883a2892c678413, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109297227419070124, guid: 84da9235b41962240883a2892c678413, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -6039299056713123328, guid: f9e1228ff6a694641af8f8251c20a4e9, type: 2}
     - target: {fileID: 8458256450954002188, guid: 84da9235b41962240883a2892c678413, type: 3}
       propertyPath: m_RootOrder
       value: 2

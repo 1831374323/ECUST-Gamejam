@@ -24,7 +24,6 @@ namespace LevelChoosingScene
             GameManager.Instance.spellID.Clear();//重置符咒位
             GameManager.Instance.level = null;//重置传入关卡
             GameManager.Instance.enemySO = null;//重置敌人SO
-
             
             for (int i = 0; i < levels.Count; i++)//给按钮绑定事件,附加音效
             {
@@ -32,21 +31,14 @@ namespace LevelChoosingScene
                 {
                     int tmp = i;
                     levelButtons[i].onClick.AddListener(() => { SetLevel(tmp); AudioManager.instance.PlaySound(0);});
-                    if (i > PlayerPrefs.GetInt("MaxLevelID", 0)) 
+                    if (i > PlayerPrefs.GetInt("MaxLevelID", 0) || i > 4) 
                     {
                         levelButtons[i].interactable = false;
                     }
                 }
             }
-
-            if (GameManager.Instance.level != null)
-            {
-                SetLevel(GameManager.Instance.level.levelId);
-            }
-            else
-            {
-                SetLevel(0);
-            }
+            
+            SetLevel(PlayerPrefs.GetInt("CurrentID", 0));
         }
 
         /// <summary>
@@ -70,6 +62,8 @@ namespace LevelChoosingScene
             if (currentLevel != null){GameManager.Instance.level = currentLevel; } //提交关卡SO
             if(currentLevel.enemy!=null){GameManager.Instance.enemySO = currentLevel.enemy;}//提交敌人SO
 
+            PlayerPrefs.SetInt("CurrentID",GameManager.Instance.level.levelId);
+            
             GameManager.Instance.spellID.Add(SpellChoosingManager.Instance.ConvertID(SpellChoosingManager.Instance.spell1.spellID)); 
             GameManager.Instance.spellID.Add(SpellChoosingManager.Instance.ConvertID(SpellChoosingManager.Instance.spell2.spellID)); 
             
