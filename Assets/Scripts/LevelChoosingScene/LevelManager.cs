@@ -70,8 +70,9 @@ namespace LevelChoosingScene
             if (currentLevel != null){GameManager.Instance.level = currentLevel; } //提交关卡SO
             if(currentLevel.enemy!=null){GameManager.Instance.enemySO = currentLevel.enemy;}//提交敌人SO
 
-            if (SpellChoosingManager.Instance.spell1.spellID >= 0) {GameManager.Instance.spellID.Add(SpellChoosingManager.Instance.ConvertID(SpellChoosingManager.Instance.spell1.spellID)); }
-            if (SpellChoosingManager.Instance.spell2.spellID >= 0) {GameManager.Instance.spellID.Add(SpellChoosingManager.Instance.ConvertID(SpellChoosingManager.Instance.spell2.spellID)); }
+            GameManager.Instance.spellID.Add(SpellChoosingManager.Instance.ConvertID(SpellChoosingManager.Instance.spell1.spellID)); 
+            GameManager.Instance.spellID.Add(SpellChoosingManager.Instance.ConvertID(SpellChoosingManager.Instance.spell2.spellID)); 
+            
             GameManager.Instance.spellID.Add(specialSpellId);//添加暴击符咒
             GameManager.Instance.LoadScene(GameManager.SceneName.FightingScene);
         }

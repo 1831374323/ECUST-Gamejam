@@ -26,7 +26,8 @@ namespace FightingScene.Managers
         public void SpellApply(int id)
         {
             enemy = enemyGO.GetComponent<UnitMono>();
-            if (spells[id]!=null)
+            if (id < 0) { return;}
+            if (spells[id] != null) 
             {spells[id].passiveSkill.SkillApply(player, enemy);}
         }
         
@@ -36,6 +37,7 @@ namespace FightingScene.Managers
         /// <param name="id"></param>
         public void SpellDisable(int id)
         {
+            if (id < 0) { return;}
             if(spells[id]!=null)
             {spells[id].passiveSkill.SkillDisable(player, enemy);}
         }
@@ -46,6 +48,7 @@ namespace FightingScene.Managers
         /// <param name="id"></param>
         public void SpellMotive(int id)
         {
+            if (id < 0) { return;}
             if(spells[id]!=null)
             {spells[id].activeSkill.SkillApply(player, enemy);}
         }
@@ -56,6 +59,7 @@ namespace FightingScene.Managers
         /// <param name="id"></param>
         public void SpellMotiveDisable(int id)
         {
+            if (id < 0) { return;}
             if(spells[id]!=null)
             {spells[id].activeSkill.SkillDisable(player, enemy);}
         }
