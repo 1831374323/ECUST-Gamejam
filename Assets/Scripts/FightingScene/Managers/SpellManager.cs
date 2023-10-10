@@ -25,7 +25,8 @@ namespace FightingScene.Managers
         /// <param name="id"></param>
         public void SpellApply(int id)
         {
-            if(spells[id]!=null)
+            enemy = enemyGO.GetComponent<UnitMono>();
+            if (spells[id]!=null)
             {spells[id].passiveSkill.SkillApply(player, enemy);}
         }
         
