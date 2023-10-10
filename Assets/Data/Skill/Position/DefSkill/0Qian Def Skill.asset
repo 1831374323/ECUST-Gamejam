@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91343ad11050a904595f4c1ec22b0174, type: 3}
   m_Name: 0Qian Def Skill
   m_EditorClassIdentifier: 
-  m_name: 
-  describe: "\u9ED8\u8BA4"
+  m_name: "\u4E7E\u4E4B\u9632\u5FA1"
+  describe: "\u4E7E\u4E4B\u9632\u5FA1\uFF0C\u51CF\u514D10/15/25\u4F24\u5BB3"
   MpCost: 140000001e00000032000000
   defValue: 0a0000000f00000019000000

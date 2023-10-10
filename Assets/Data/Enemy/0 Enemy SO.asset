@@ -18,7 +18,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 68744d59f7a2f544e9275201b7e0fccb, type: 2}
   - {fileID: 11400000, guid: 2bac628b461fbd84bb5f1953f0a0104e, type: 2}
   - {fileID: 11400000, guid: 058501a09f2ae1545a2e1216b0766379, type: 2}
-  maxHp: 100
+  maxHp: 120
   speed: 5
   shield: 0
   image: {fileID: 21300000, guid: 1ac94e9de1b60de4fb73f93ea5d4604f, type: 3}
