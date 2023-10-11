@@ -688,7 +688,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 15
 --- !u!222 &69848663
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1155,7 +1155,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 50
+  m_Text: 40
 --- !u!222 &190076430
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2863,11 +2863,11 @@ MonoBehaviour:
   unitName: Player
   maxHp: 100
   currentHp: 100
-  maxMp: 130
-  currentMp: 130
+  maxMp: 150
+  currentMp: 150
   cureMp: 45
-  speed: 10
-  criticalHitRate: 0
+  speed: 15
+  criticalHitRate: 0.3
   criticalStrikeRate: 1.5
   currentPosition: 0
   shield: 0
@@ -5503,7 +5503,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 30
+  m_Text: 25
 --- !u!222 &1157967008
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5594,7 +5594,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6447\u4E00\u6447"
+  m_Text: "\u6295\u63B7\u94DC\u5E01"
 --- !u!222 &1174647162
 CanvasRenderer:
   m_ObjectHideFlags: 0
