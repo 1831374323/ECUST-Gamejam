@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 namespace EcustGamejam
 {
@@ -9,13 +10,17 @@ namespace EcustGamejam
     {
         [SerializeField]
         List<int> atkValue = new List<int>();
+        public List<int> probability = new List<int>();
+
         public ParalysisBuffSO paralysisBuffSO;
         protected override float GetAtkValue(int level)
         {
             ParalysisBuff paralysisBuff = new ParalysisBuff(paralysisBuffSO);
-            paralysisBuff.AddBuff(m_target,level);
 
-            Debug.Log($"Õð½øÐÐ{level}½×¹¥»÷");
+            if (Random.Range(0, 100) < probability[level])
+            {
+                paralysisBuff.AddBuff(m_target, level);
+            }
 
             return atkValue[level];
         }

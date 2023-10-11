@@ -14,7 +14,7 @@ namespace EcustGamejam
         protected override float GetAtkValue(int level)
         {
             DamageReduceBuff damageReduceBuff = new DamageReduceBuff(damageReduceBuffSO);
-            damageReduceBuff.AddBuff(m_target, level);
+            damageReduceBuff.AddBuff(m_skillUser, level);
 
             Debug.Log($"¶Ò½øÐÐ{level}½×¹¥»÷");
             return atkValue[level];

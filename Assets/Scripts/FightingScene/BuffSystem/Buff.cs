@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace EcustGamejam
 {
@@ -14,6 +15,8 @@ namespace EcustGamejam
         protected UnitMono target;
         protected BuffSO buffSO;
         protected int level;
+
+        GameObject buffIcon;
 
         public Buff(BuffSO _buffSO)
         {
@@ -33,10 +36,10 @@ namespace EcustGamejam
             OneTime
         }
 
-        public void AddBuff(UnitMono _target,int _level=0)
+        public void AddBuff(UnitMono _target, int _level = 0)
         {
             target = _target;
-            level= _level;
+            level = _level;
 
             switch (buffSO.applyTime)
             {
@@ -71,15 +74,14 @@ namespace EcustGamejam
                 default:
                     break;
             }
+
+            buffIcon = FightingUIManager.Instance.buffIconPrefab;
+            buffIcon.GetComponent<Image>().sprite = buffSO.icon;
+            buffIcon = FightingUIManager.Instance.AddBuffIcon(target, buffIcon,buffSO.description);
         }
         protected void BuffApply()
         {
             leftTurn--;
-            if (leftTurn == -1)
-            {
-                BuffDisable(target);
-                
-            }
             if (leftTurn < 0)
             {
                 return;
@@ -97,6 +99,11 @@ namespace EcustGamejam
                 BuffEffect(target);
             }
             Debug.Log($"Buff{buffSO.name}生效,剩余{leftTurn}回合");
+
+            if (leftTurn == 0)
+            {
+                BuffDisable(target);
+            }
         }
 
         protected virtual void BuffEffect(UnitMono _target)
@@ -106,7 +113,8 @@ namespace EcustGamejam
 
         protected virtual void BuffDisable(UnitMono _target)
         {
-            myAction -= BuffApply;
+            //myAction -= BuffApply;
+            GameObject.Destroy(buffIcon);
             Debug.Log($"Buff{buffSO.name}失效");
 
         }

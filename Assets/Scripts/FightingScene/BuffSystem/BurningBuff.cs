@@ -23,13 +23,10 @@ namespace EcustGamejam
         protected override void BuffEffect(UnitMono _target)
         {
             base.BuffEffect(base.target);
-            Debug.Log(burningBuffSO.probability[level] + "%概率进行灼烧");
+            Debug.Log("进行灼烧");
 
-            if (Random.Range(0, 100) < burningBuffSO.probability[base.level])
-            {
+            FightingManager.Instance.DoDamage(burningBuffSO.burningValue, base.target);
 
-                FightingManager.Instance.DoDamage(burningBuffSO.burningValue, base.target);
-            }
         }
 
 
