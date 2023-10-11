@@ -15,4 +15,5 @@ MonoBehaviour:
   m_name: "\u79BB\u4E4B\u9632\u5FA1"
   describe: "\u9B3C\u706B\u98D8\u5FFD\uFF1A\u4EA7\u751F5/15/25\u70B9\u62A4\u76FE\u503C  "
   MpCost: 0f0000001900000028000000
+  icon: {fileID: 21300000, guid: f13fab9d05350e64597b7d1f62aa071d, type: 3}
   defValue: 050000000f00000019000000
