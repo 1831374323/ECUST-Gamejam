@@ -41,6 +41,7 @@ namespace EcustGamejam
         void Update()
         {
             UpdateUI();
+            UpdateShieldValue();
         }
 
         public void LoadLevelScene()
@@ -146,6 +147,38 @@ namespace EcustGamejam
         public void UpDateBehaviourText(string text)
         {
             behaviourText.text = text;
+        }
+
+        #region-----------------buff----------------
+
+        public GameObject buffIconPrefab;
+        public GameObject enemyBuffList;
+        public GameObject playerBuffList;
+
+        public GameObject AddBuffIcon(UnitMono target, GameObject buffIcon,string description)
+        {
+            GameObject obj;
+            if (target.gameObject.name == "Player")
+            {
+                obj = Instantiate(buffIcon, playerBuffList.transform);
+            }
+            else
+            {
+                obj = Instantiate(buffIcon, enemyBuffList.transform);
+            }
+
+            obj.transform.Find("Text").GetComponent<Text>().text = description;
+
+            return obj;
+        }
+        #endregion
+
+        public Text playerShield;
+        public Text enemyShield;
+        public void UpdateShieldValue()
+        {
+            playerShield.text = FightingManager.Instance.player.shield.ToString();
+            enemyShield.text = FightingManager.Instance.enemy.shield.ToString();
         }
     }
 }

@@ -25,13 +25,10 @@ namespace EcustGamejam
         protected override void BuffEffect(UnitMono _target)
         {
             base.BuffEffect(_target);
-            Debug.Log(getMpBuffSO.probability[base.level] + "%概率触发额外回蓝");
-
-            if (Random.Range(0, 100) < getMpBuffSO.probability[base.level])
-            {
+            
                 _target.cureMp += getMpBuffSO.extraMpCure;
                 changeValue = getMpBuffSO.extraMpCure;
-            }
+            
 
         }
     }

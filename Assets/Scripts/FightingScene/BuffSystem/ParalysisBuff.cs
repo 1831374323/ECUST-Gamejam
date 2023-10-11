@@ -24,13 +24,10 @@ namespace EcustGamejam
         protected override void BuffEffect(UnitMono _target)
         {
             base.BuffEffect(_target);
-            Debug.Log(paralysisBuffSO.probability[base.level] + "%¸ÅÂÊ´¥·¢Âé±Ô");
-
-            if (Random.Range(0, 100) < paralysisBuffSO.probability[base.level])
-            {
+            
                 speedChangeValue = _target.speed;
                 _target.speed = 0;
-            }
+            
 
         }
 

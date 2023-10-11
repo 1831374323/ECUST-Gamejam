@@ -7,6 +7,6 @@ namespace EcustGamejam
     [CreateAssetMenu(menuName = "MyData/Buff/ParalysisBuff")]
     public class ParalysisBuffSO : BuffSO
     {
-        public List<int> probability=new List<int>();
+        
     }
 }

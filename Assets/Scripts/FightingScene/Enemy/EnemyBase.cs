@@ -28,7 +28,7 @@ namespace EcustGamejam
             shieldIncreaseValue = 1;
 
             gameObject.GetComponent<Image>().sprite = myData.image;
-
+            FightingUIManager.Instance.enemyPosition.GetComponent<Image>().sprite = myData.image;
         }
 
         public void EnemyRoundStart()

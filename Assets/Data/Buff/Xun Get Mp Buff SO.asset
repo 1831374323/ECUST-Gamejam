@@ -16,5 +16,7 @@ MonoBehaviour:
   existTurn: 1
   applyTime: 2
   type: 0
+  icon: {fileID: 21300000, guid: afb63ca26741595468f9bbdb5cc9db81, type: 3}
+  description: "\u56DE\u5408\u5F00\u59CB\u65F6\uFF0C\u989D\u5916\u6062\u590D\u771F\u6C14\u503C"
   probability: 1e0000002d0000003c000000
   extraMpCure: 30

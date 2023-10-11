@@ -11,6 +11,7 @@ namespace EcustGamejam
         public int existTurn;
         public Buff.ApplyTime applyTime;
         public Buff.Type type;
-        
+        public Sprite icon;
+        public string description;
     }
 }
