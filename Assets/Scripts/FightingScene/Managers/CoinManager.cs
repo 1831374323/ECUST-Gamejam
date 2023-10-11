@@ -146,6 +146,7 @@ namespace FightingScene.Managers
                 coin.GetComponent<Button>().interactable = true;
             }
             bool isSuccess = player.SetMp(player.cureMp);
+            Debug.Log("自动回蓝"+ player.cureMp);
         }
 
         /// <summary>

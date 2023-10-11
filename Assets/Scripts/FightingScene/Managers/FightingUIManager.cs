@@ -131,6 +131,19 @@ namespace EcustGamejam
             hpText.gameObject.SetActive(false);
         }
 
+        public Text enemyHp;
+
+        public void ShowEnemyHp()
+        {
+            enemyHp.gameObject.SetActive(true);
+            enemyHp.text = FightingManager.Instance.enemy.CurrentHp + "/" + FightingManager.Instance.enemy.maxHp;
+        }
+
+        public void HideEnemyHp()
+        {
+            enemyHp.gameObject.SetActive(false);
+        }
+
         public void ShowMpText()
         {
             mpText.gameObject.SetActive(true);

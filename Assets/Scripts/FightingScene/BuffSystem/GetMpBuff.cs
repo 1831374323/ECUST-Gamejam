@@ -18,17 +18,18 @@ namespace EcustGamejam
         protected override void BuffDisable(UnitMono _target)
         {
             base.BuffDisable(_target);
-            _target.cureMp -= changeValue;
+            //_target.cureMp -= changeValue;
             changeValue = 0;
         }
 
         protected override void BuffEffect(UnitMono _target)
         {
             base.BuffEffect(_target);
-            
-                _target.cureMp += getMpBuffSO.extraMpCure;
-                changeValue = getMpBuffSO.extraMpCure;
-            
+            //_target.cureMp += getMpBuffSO.extraMpCure;
+            _target.SetMp(getMpBuffSO.extraMpCure);
+            Debug.Log(target.gameObject.name+"更改回蓝量为"+ _target.cureMp);
+            changeValue = getMpBuffSO.extraMpCure;
+
 
         }
     }

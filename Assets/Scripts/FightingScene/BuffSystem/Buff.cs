@@ -106,6 +106,8 @@ namespace EcustGamejam
             }
         }
 
+        
+
         protected virtual void BuffEffect(UnitMono _target)
         {
 

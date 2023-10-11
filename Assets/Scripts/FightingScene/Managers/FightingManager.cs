@@ -89,6 +89,8 @@ namespace EcustGamejam
                 nextStates.Add(RoundState.CoinRound);
                 OnWholeRoundStartAction?.Invoke();
 
+                Debug.Log(player.cureMp);
+
                 //进行回合阶段
                 while (nextStates.Count > 0)
                 {

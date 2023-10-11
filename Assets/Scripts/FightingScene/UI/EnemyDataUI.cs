@@ -21,7 +21,6 @@ public class EnemyDataUI : MonoBehaviour
 
         text.text = $"怪物名称：{data.m_name}\r\n" +
                     $"怪物描述：{data.description}\r\n" +
-                    $"剩余血量：{enemyBase.CurrentHp}\r\n" +
-                    $"当前护盾：{enemyBase.shield}\r\n";
+                    $"怪物速度：{enemyBase.speed}\r\n";
     }
 }
