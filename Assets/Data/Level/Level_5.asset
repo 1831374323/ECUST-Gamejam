@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Level_5
   m_EditorClassIdentifier: 
   levelId: 4
-  description: "\u5173\u5361\u4FE1\u606F\uFF1A\u7B2C\u4E94\u5173"
-  enemyDescription: "\u654C\u4EBA\u4FE1\u606F\uFF1A\u7B2C\u4E94\u5173\u7684\u654C\u4EBA"
+  description: "\u5360\u636E\u4E7E\u5BAB\u7684\u4E1C\u6D77\u5E1D\u738B"
+  enemyDescription: "\u5360\u636E\u4E86\u4E7E\u5BAB\u7684\u4E1C\u6D77\u5E1D\u738B"
   enemy: {fileID: 11400000, guid: 8bf652981432a8641b64bded4c509fcf, type: 2}
