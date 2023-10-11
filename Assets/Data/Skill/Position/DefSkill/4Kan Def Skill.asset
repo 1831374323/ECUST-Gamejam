@@ -15,4 +15,5 @@ MonoBehaviour:
   m_name: "\u574E\u4E4B\u9632\u5FA1"
   describe: "\u574E\u4E4B\u9632\u5FA1\uFF0C\u51CF\u514D10/15/25\u4F24\u5BB3"
   MpCost: 0f0000001900000028000000
+  shieldHealBuffSO: {fileID: 11400000, guid: f0c0c594957211a4ea09d547770ec0ca, type: 2}
   defValue: 0a0000000f00000019000000

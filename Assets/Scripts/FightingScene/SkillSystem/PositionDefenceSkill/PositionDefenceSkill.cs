@@ -14,6 +14,8 @@ namespace EcustGamejam
         {
 
             base.SkillApply(skillUser, target, level);
+            m_skillUser = skillUser;
+            m_target = target;
 
             if (MpCost.Count > level)
             {

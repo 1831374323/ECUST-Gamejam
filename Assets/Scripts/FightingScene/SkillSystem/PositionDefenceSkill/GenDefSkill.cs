@@ -12,7 +12,7 @@ namespace EcustGamejam
         protected override float GetDefValue(int level)
         {
             Debug.Log($"ôŞ½øĞĞ{level}½×·ÀÓù");
-            return defValue[level];
+            return defValue[level]+(int)(m_skillUser.maxMp*0.1);
         }
 
     }
