@@ -2871,7 +2871,7 @@ MonoBehaviour:
   currentHp: 100
   maxMp: 150
   currentMp: 150
-  cureMp: 45
+  cureMp: 50
   speed: 15
   criticalHitRate: 0.3
   criticalStrikeRate: 1.5

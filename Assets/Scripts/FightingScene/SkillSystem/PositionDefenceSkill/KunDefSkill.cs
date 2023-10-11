@@ -11,8 +11,17 @@ namespace EcustGamejam
         List<int> defValue = new List<int>();
         protected override float GetDefValue(int level)
         {
-            Debug.Log($"坤进行{level}阶防御");
-            return defValue[level];
+            if (m_target.currentPosition == 2 || m_target.currentPosition == 6)
+            {
+                Debug.Log($"坤进行{level}阶防御,护盾效果翻倍");
+                return 2 * defValue[level];
+            }
+
+            else
+            {
+                Debug.Log($"坤进行{level}阶防御");
+                return defValue[level];
+            }
         }
 
     }

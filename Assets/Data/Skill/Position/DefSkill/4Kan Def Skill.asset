@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 4Kan Def Skill
   m_EditorClassIdentifier: 
   m_name: "\u574E\u4E4B\u9632\u5FA1"
-  describe: "\u574E\u4E4B\u9632\u5FA1\uFF0C\u51CF\u514D10/15/25\u4F24\u5BB3"
+  describe: "\u6C34\u6DA6\u5929\u534E\uFF1A \u62A4\u76FE10/15/25 \u56DE\u5408\u7ED3\u675F\u65F6\u56DE\u590D\u5F53\u524D\u56DE\u5408\u5269\u4F59\u62A4\u76FE\u503C40%/60%/100%\u7B49\u91CF\u7684\u751F\u547D\u503C"
   MpCost: 0f0000001900000028000000
+  shieldHealBuffSO: {fileID: 11400000, guid: f0c0c594957211a4ea09d547770ec0ca, type: 2}
   defValue: 0a0000000f00000019000000

@@ -98,7 +98,7 @@ namespace EcustGamejam
             {
                 BuffEffect(target);
             }
-            Debug.Log($"Buff{buffSO.name}生效,剩余{leftTurn}回合");
+            Debug.Log($"Buff{buffSO.name}??Ч,???{leftTurn}???");
 
             if (leftTurn == 0)
             {
@@ -115,7 +115,7 @@ namespace EcustGamejam
         {
             //myAction -= BuffApply;
             GameObject.Destroy(buffIcon);
-            Debug.Log($"Buff{buffSO.name}失效");
+            Debug.Log($"Buff{buffSO.name}?Ч");
 
         }
     }
