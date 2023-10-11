@@ -12,14 +12,16 @@ namespace EcustGamejam
         protected UnitMono m_target;
         public override void SkillApply(UnitMono skillUser, UnitMono target, int level)
         {
-
+            string behaviourText = $"释放{level+1}阶{m_name}";
             base.SkillApply(skillUser, target, level);
+            m_skillUser = skillUser;
+            m_target = target;
 
             if (MpCost.Count > level)
             {
                 if (!skillUser.SetMp(-MpCost[level]))
                 {
-                    Debug.Log("蓝量不足");
+                    FightingUIManager.Instance.UpDateBehaviourText("蓝量不足");
                     return;
                 }
             }
@@ -30,29 +32,19 @@ namespace EcustGamejam
             if (PositionManager.Instance.GetCounterRelation(skillUser, target)
                 == PositionManager.CounterRelation.Counter)
             {
-                Debug.Log("触发克制");
+                behaviourText += ",效果拔群！！！";
                 defValue *= 1.2f;
             }
             else if (PositionManager.Instance.GetCounterRelation(skillUser, target)
                 == PositionManager.CounterRelation.Countered)
             {
-                Debug.Log("触发被克制");
+                behaviourText += ",效果微弱...O.o";
                 defValue *= 0.8f;
             }
 
-            ////暴击
-            //if (FightingManager.Instance.criticalState)
-            //{
-
-            //    if (UnityEngine.Random.Range(0, 100) <= skillUser.criticalHitRate)
-            //    {
-            //        Debug.Log("触发暴击");
-            //        defValue *= skillUser.criticalStrikeRate;
-
-            //    }
-            //}
-
             skillUser.shield += (int)(defValue * skillUser.shieldIncreaseValue);
+            
+            FightingUIManager.Instance.UpDateBehaviourText(behaviourText);
         }
 
         /// <summary>
