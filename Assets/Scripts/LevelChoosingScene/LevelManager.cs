@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using EcustGamejam;
 using UnityEngine;
@@ -17,6 +18,7 @@ namespace LevelChoosingScene
         [SerializeField,Tooltip("敌人信息")] private Text enemyInfoText;
         [SerializeField,Tooltip("敌人信息")] private LevelScriptObject currentLevel;
         [SerializeField,Tooltip("暴击符咒ID")] private int specialSpellId;
+        [SerializeField,Tooltip("怪物强化卦位")] private Text positionText;
 
 
         private void Start()
@@ -49,7 +51,12 @@ namespace LevelChoosingScene
         {
             levelInfoText.text = levels[id].description;
             enemyInfoText.text = levels[id].enemy.description;
-            if(levels[id].enemy!=null) {enemyImage.sprite = levels[id].enemy.headImage;}
+            if (levels[id].enemy != null)
+            {
+                enemyImage.sprite = levels[id].enemy.headImage;
+                
+                positionText.text = levels[id].enemy.buffPosition.m_name;
+            }
             currentLevel = levels[id];
         }
 
