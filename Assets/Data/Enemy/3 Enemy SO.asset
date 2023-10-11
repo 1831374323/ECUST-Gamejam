@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 3 Enemy SO
   m_EditorClassIdentifier: 
   m_name: "\u725B\u9B54\u738B"
-  description: 
+  description: "\u4F20\u8BF4\u4E2D\u7684\u725B\u9B54\u738B\uFF0C\u88AB\u725B\u7B26\u5492\u9009\u4E2D\uFF0C\u5360\u636E\u4E86\u516B\u5366\u5927\u9646\u7684\u5764\u5BAB"
   skillRecycle:
   - {fileID: 11400000, guid: fbdc15f810048734c82013a73a04ffb4, type: 2}
   - {fileID: 11400000, guid: 0b3e5dabde517c9439d4615d5106b3c5, type: 2}

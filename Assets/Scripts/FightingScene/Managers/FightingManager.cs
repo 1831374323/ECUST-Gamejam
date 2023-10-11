@@ -9,6 +9,7 @@ using FightingScene.CoinSystem;
 using FightingScene.SpellSystem;
 using Unity.VisualScripting;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Managers;
 
 namespace EcustGamejam
 {
@@ -233,6 +234,7 @@ namespace EcustGamejam
         public void OnPlayerRoundEnd()
         {
             OnPlayerRoundEndAction?.Invoke();
+            AudioManager.instance.PlaySound(0);
         }
 
         private void PlayerRoundEnd()

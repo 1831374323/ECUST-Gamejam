@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using FightingScene.UnitSystem;
 using UnityEngine.Serialization;
+using Managers;
 
 namespace FightingScene.Managers
 {
@@ -81,6 +82,7 @@ namespace FightingScene.Managers
                 bool isSuccess = player.SetMp(-m_TrueMp);
                 //Debug.Log(isSuccess + "    MP:" + m_TrueMp);
             }
+            AudioManager.instance.PlaySound(0);
         }
 
         /// <summary>
@@ -154,6 +156,7 @@ namespace FightingScene.Managers
             coinUI.SetActive(false);
             coinFightUI.SetActive(true);
             SetFightCoinUI();
+            AudioManager.instance.PlaySound(0);
         }
         
         public void OnCoinTurnEnd()

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using FightingScene.UnitSystem;
 using Frame.Core;
+using Managers;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -47,6 +48,7 @@ namespace EcustGamejam
         public void LoadLevelScene()
         {
             GameManager.Instance.LoadScene(GameManager.SceneName.LevelScene);
+            AudioManager.instance.PlaySound(0);
         }
 
         void UpdateUI()

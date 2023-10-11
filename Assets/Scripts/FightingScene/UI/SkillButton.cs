@@ -1,4 +1,5 @@
 using FightingScene.UnitSystem;
+using Managers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,9 +31,10 @@ namespace EcustGamejam
                 {
                     PositionManager.Instance.positions[player.currentPosition].
                         attackskill.SkillApply(player, enemy, level);
+                    AudioManager.instance.PlaySound(0);
                 }
             }
-
+            
         }
 
         public void OnDefenceClick()
@@ -45,6 +47,7 @@ namespace EcustGamejam
                 {
                     PositionManager.Instance.positions[player.currentPosition].
                         defenceSkill.SkillApply(player, enemy, level);
+                    AudioManager.instance.PlaySound(0);
                 }
             }
         }
