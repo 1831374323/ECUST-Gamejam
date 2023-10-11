@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd4770d50b338814ea8ff059f997b424, type: 3}
   m_Name: 2Dui Atk Skill
   m_EditorClassIdentifier: 
-  m_name: "\u67D4\u91D1\u514B\u521A"
-  describe: "\u67D4\u91D1\u514B\u521A\uFF1A\u9020\u62105/10/20\u70B9\u4F24\u5BB3
-    \u672C\u56DE\u5408\u53D7\u5230\u4F24\u5BB3\u4E0B\u964D10%/15%/25%"
+  m_name: "\u67AF\u840E"
+  describe: "\u67AF\u840E\uFF1A\u9020\u621015/20/30\u70B9\u4F24\u5BB3 \u654C\u4EBA\u672C\u56DE\u5408\u653B\u51FB\u529B\u4E0B\u964D15%/20%/30%"
   MpCost: 140000001e00000032000000
-  atkValue: 050000000a00000014000000
+  atkValue: 0f000000140000001e000000
   damageReduceBuffSO: {fileID: 11400000, guid: ff5da339f4cfac147bcca3e4dce89b51, type: 2}

@@ -18,8 +18,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b43f6ae99217a63418f935926c7be6a6, type: 2}
   - {fileID: 11400000, guid: a15b983cf162be84e9632ffcd3f70c1a, type: 2}
   - {fileID: 11400000, guid: 5984d71a0268932468c702e27efca3db, type: 2}
-  maxHp: 150
-  speed: 15
+  maxHp: 222
+  speed: 20
   shield: 0
   image: {fileID: 21300000, guid: f96f37c99e8ba6f449598d9496aa0a6c, type: 3}
   headImage: {fileID: 21300000, guid: 4ec114d89ef7dce479e52aff57e1d1b3, type: 3}

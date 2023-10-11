@@ -19,6 +19,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: ceaa4a0e1932a5f4d8c378f79ee0310f, type: 3}
   description: "\u83B7\u5F97\u4F24\u5BB3\u51CF\u514D"
   decreaseValue:
-  - 0.1
   - 0.15
-  - 0.25
+  - 0.2
+  - 0.3

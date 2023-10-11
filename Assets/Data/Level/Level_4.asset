@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Level_4
   m_EditorClassIdentifier: 
   levelId: 3
-  description: "\u5173\u5361\u4FE1\u606F\uFF1A\u7B2C\u56DB\u5173"
+  description: "\u5360\u636E\u5764\u5BAB\u7684\u725B\u9B54\u738B"
   enemyDescription: "\u654C\u4EBA\u4FE1\u606F\uFF1A\u7B2C\u56DB\u5173\u7684\u654C\u4EBA"
   enemy: {fileID: 11400000, guid: 91456836e12bc7e46ab0a19e197edbdf, type: 2}

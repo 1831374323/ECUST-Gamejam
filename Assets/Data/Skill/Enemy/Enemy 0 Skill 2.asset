@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ae11793a48f244895872e560e333ca, type: 3}
   m_Name: Enemy 0 Skill 2
   m_EditorClassIdentifier: 
-  m_name: "\u51E4\u51F0\u795E\u98CE\uFF0C\u9020\u621035\u70B9\u4F24\u5BB3\uFF0C\u83B7\u5F9715\u70B9\u62A4\u76FE"
-  damageValue: 35
+  m_name: "\u51E4\u51F0\u795E\u98CE\uFF0C\u9020\u621030\u70B9\u4F24\u5BB3\uFF0C\u83B7\u5F9715\u70B9\u62A4\u76FE"
+  damageValue: 30
   shieldValue: 15
