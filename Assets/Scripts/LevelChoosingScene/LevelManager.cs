@@ -40,6 +40,8 @@ namespace LevelChoosingScene
                 }
             }
             
+            ShowTutorial();
+
             SetLevel(PlayerPrefs.GetInt("CurrentID", 0));
         }
 
@@ -85,6 +87,18 @@ namespace LevelChoosingScene
         {
             AudioManager.instance.PlaySound(0);//给按钮添加音效
             GameManager.Instance.LoadScene(GameManager.SceneName.StartScene);
+        }
+
+        public GameObject settingUI;
+        public GameObjectSetActive tutorialUI;
+        public void ShowTutorial()
+        {
+            if (PlayerPrefs.GetInt("FirstGame_CSY",0) == 0)
+            {
+                settingUI.SetActive(true);
+                tutorialUI.Show();
+                PlayerPrefs.SetInt("FirstGame_CSY", 1);
+            }
         }
         
     }
