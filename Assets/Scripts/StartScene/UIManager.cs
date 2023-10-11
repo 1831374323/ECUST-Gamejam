@@ -22,6 +22,7 @@ namespace StartScene
 
         public void NewEnterGame()
         {
+            AudioManager.instance.PlaySound(0);
             PlayerPrefs.DeleteAll();
             EnterGame();
         }
@@ -31,6 +32,7 @@ namespace StartScene
         /// </summary>
         public void OpenCloseMakerUI()
         {
+            AudioManager.instance.PlaySound(0);
             makerUI.SetActive(!makerUI.activeSelf);
         }
         
