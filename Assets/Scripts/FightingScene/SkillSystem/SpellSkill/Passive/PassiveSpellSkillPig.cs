@@ -10,8 +10,8 @@ namespace FightingScene.SkillSystem.SpellSkill.Passive
     {
         public override void SkillApply(UnitMono player,UnitMono enemy)
         {
-            FightingUIManager.Instance.UpDateBehaviourText(this.m_name + "的技能触发：立即回复十点生命");
-            player.SetHp(10);
+            FightingUIManager.Instance.UpDateBehaviourText(this.m_name + "的技能触发：立即回复二十点生命");
+            player.SetHp(20);
         }
         public override void SkillDisable(UnitMono player,UnitMono enemy)
         {

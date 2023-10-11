@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 0Qian Def Skill
   m_EditorClassIdentifier: 
   m_name: "\u4E7E\u4E4B\u9632\u5FA1"
-  describe: "\u4E7E\u4E4B\u9632\u5FA1\uFF0C\u51CF\u514D10/15/25\u4F24\u5BB3"
+  describe: "\u4E7E\u4E4B\u9632\u5FA1\uFF0C\u51CF\u514D10/15/25\u4F24\u5BB3\uFF08\u62A4\u76FE\uFF09"
   MpCost: 0f0000001900000028000000
   defValue: 0a0000000f00000019000000
